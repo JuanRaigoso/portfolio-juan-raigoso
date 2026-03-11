@@ -1,1 +1,566 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio profesional de Juan David Raigoso, Economista y Científico de Datos." />
+  <title>Juan David Raigoso | Economista & Científico de Datos</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#0b1120',
+              bgSoft: '#111827',
+              panel: '#131c31',
+              panel2: '#1a2540',
+              line: '#24314f',
+              primary: '#22c55e',
+              secondary: '#38bdf8',
+              accent: '#f59e0b',
+              text: '#e5eefb',
+              muted: '#9fb0cc'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(2,6,23,0.32)',
+            glow: '0 0 0 1px rgba(56,189,248,0.16), 0 18px 60px rgba(2,6,23,0.45)'
+          },
+          backgroundImage: {
+            page: 'radial-gradient(circle at 10% 20%, rgba(34,197,94,0.10), transparent 25%), radial-gradient(circle at 90% 10%, rgba(56,189,248,0.12), transparent 28%), linear-gradient(180deg, #0b1120 0%, #0f172a 100%)',
+            hero: 'linear-gradient(135deg, rgba(56,189,248,0.08), rgba(34,197,94,0.06))'
+          },
+          keyframes: {
+            floaty: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' }
+            },
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            }
+          },
+          animation: {
+            floaty: 'floaty 6s ease-in-out infinite',
+            fadeUp: 'fadeUp 0.8s ease forwards'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .glass {
+      background: rgba(19, 28, 49, 0.72);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(159, 176, 204, 0.12);
+    }
+    .card-hover {
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      border-color: rgba(56, 189, 248, 0.45);
+      box-shadow: 0 0 0 1px rgba(56,189,248,0.12), 0 16px 40px rgba(2,6,23,0.38);
+    }
+    .timeline-line::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(34,197,94,.8), rgba(56,189,248,.45), rgba(36,49,79,.25));
+    }
+    .grid-glow {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to bottom, rgba(255,255,255,0.65), transparent 85%);
+      pointer-events: none;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .tool-chip {
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(17, 24, 39, 0.60);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+    }
+    .tool-chip:hover {
+      transform: translateY(-4px);
+    }
+    .tool-python:hover {
+      background: rgba(59, 130, 246, 0.14);
+      border-color: rgba(59, 130, 246, 0.45);
+      box-shadow: 0 0 0 1px rgba(59,130,246,0.12), 0 12px 28px rgba(2,6,23,0.24);
+      color: #dbeafe;
+    }
+    .tool-r:hover {
+      background: rgba(96, 165, 250, 0.14);
+      border-color: rgba(96, 165, 250, 0.45);
+      box-shadow: 0 0 0 1px rgba(96,165,250,0.12), 0 12px 28px rgba(2,6,23,0.24);
+      color: #dbeafe;
+    }
+    .tool-powerbi:hover {
+      background: rgba(250, 204, 21, 0.14);
+      border-color: rgba(250, 204, 21, 0.45);
+      box-shadow: 0 0 0 1px rgba(250,204,21,0.10), 0 12px 28px rgba(2,6,23,0.24);
+      color: #fef9c3;
+    }
+    .tool-sql:hover {
+      background: rgba(45, 212, 191, 0.14);
+      border-color: rgba(45, 212, 191, 0.45);
+      box-shadow: 0 0 0 1px rgba(45,212,191,0.10), 0 12px 28px rgba(2,6,23,0.24);
+      color: #ccfbf1;
+    }
+    .tool-stata:hover {
+      background: rgba(20, 184, 166, 0.14);
+      border-color: rgba(20, 184, 166, 0.45);
+      box-shadow: 0 0 0 1px rgba(20,184,166,0.10), 0 12px 28px rgba(2,6,23,0.24);
+      color: #ccfbf1;
+    }
+    .tool-mlflow:hover {
+      background: rgba(168, 85, 247, 0.14);
+      border-color: rgba(168, 85, 247, 0.45);
+      box-shadow: 0 0 0 1px rgba(168,85,247,0.10), 0 12px 28px rgba(2,6,23,0.24);
+      color: #f3e8ff;
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-text bg-page">
+  <header class="sticky top-0 z-50 border-b border-white/5 bg-brand-bg/75 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <a href="#inicio" class="text-sm font-bold tracking-[0.35em] text-white">JDR</a>
+      <div class="hidden gap-6 text-sm text-brand-muted md:flex">
+        <a href="#habilidades" class="transition hover:text-white">Habilidades</a>
+        <a href="#experiencia" class="transition hover:text-white">Experiencia</a>
+        <a href="#proyectos" class="transition hover:text-white">Proyectos</a>
+        <a href="#publicaciones" class="transition hover:text-white">Publicaciones</a>
+        <a href="#certificaciones" class="transition hover:text-white">Certificaciones</a>
+        <a href="#contacto" class="transition hover:text-white">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="relative overflow-hidden">
+      <div class="grid-glow"></div>
+      <div class="mx-auto grid min-h-[92vh] max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-20">
+        <div class="reveal">
+          <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/15 bg-emerald-400/10 px-4 py-2 text-sm text-emerald-300">
+            <i data-lucide="sparkles" class="h-4 w-4"></i>
+            Economista · Científico de Datos · Investigación aplicada
+          </p>
+          <h1 class="max-w-4xl text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-7xl">
+            Juan David Raigoso
+          </h1>
+          <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
+            Transformo datos económicos, sociales y productivos en modelos, tableros e insights
+            accionables con una mezcla de rigor cuantitativo, machine learning y diseño analítico.
+          </p>
+          <p class="mt-6 max-w-3xl text-base leading-7 text-brand-muted">
+            Mi perfil integra economía, ciencia de datos y visualización para construir soluciones que sirvan
+            tanto a investigación como a operación, política pública y toma de decisiones empresariales.
+          </p>
+
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="HV-Juan-D-Raigoso.pdf" download class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 to-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02]">
+              <i data-lucide="download" class="h-4 w-4"></i>
+              Download CV
+            </a>
+            <a href="#proyectos" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-line bg-brand-panel/60 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-sky-400/60 hover:text-white">
+              <i data-lucide="folder-kanban" class="h-4 w-4"></i>
+              Ver proyectos
+            </a>
+          </div>
+
+          <div class="mt-10 grid gap-4 sm:grid-cols-3">
+            <div class="card-hover rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-2xl font-bold text-white">4+ años</p>
+              <p class="mt-1 text-sm text-brand-muted">Experiencia en análisis, modelamiento y visualización</p>
+            </div>
+            <div class="card-hover rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-2xl font-bold text-white">MSc.</p>
+              <p class="mt-1 text-sm text-brand-muted">Maestría en Ciencia de Datos con enfoque aplicado</p>
+            </div>
+            <div class="card-hover rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-2xl font-bold text-white">4</p>
+              <p class="mt-1 text-sm text-brand-muted">Publicaciones y productos científicos destacados</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal glass rounded-[2rem] p-5 shadow-glow">
+          <div class="rounded-[1.75rem] border border-white/10 bg-hero p-6 lg:p-7">
+            <div class="grid gap-6 md:grid-cols-[0.85fr_1.15fr] md:items-center">
+              <div class="relative mx-auto w-full max-w-[260px] animate-floaty">
+                <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-emerald-400/20 via-sky-400/10 to-amber-300/10 blur-2xl"></div>
+                <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-brand-panel2 p-3 shadow-soft">
+                  <img src="assets/profile.jpg" alt="Foto de Juan David Raigoso" class="h-[320px] w-full rounded-[1.35rem] object-cover" />
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
+                  <div>
+                    <p class="text-sm uppercase tracking-[0.3em] text-sky-300">Perfil profesional</p>
+                    <h2 class="mt-2 text-2xl font-bold text-white">Economía + Data Science</h2>
+                  </div>
+                  <div class="rounded-2xl border border-sky-400/20 bg-sky-400/10 p-3 text-sky-300">
+                    <i data-lucide="brain-circuit" class="h-7 w-7"></i>
+                  </div>
+                </div>
+
+                <div class="mt-6 space-y-4 text-sm text-slate-200">
+                  <div class="flex items-start gap-3">
+                    <i data-lucide="graduation-cap" class="mt-0.5 h-5 w-5 text-emerald-400"></i>
+                    <span>MSc. en Ciencia de Datos · Pontificia Universidad Javeriana</span>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <i data-lucide="briefcase-business" class="mt-0.5 h-5 w-5 text-emerald-400"></i>
+                    <span>Economista y Analista de Datos en FENALCE</span>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <i data-lucide="map-pin" class="mt-0.5 h-5 w-5 text-emerald-400"></i>
+                    <span>Quindío, Colombia</span>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <i data-lucide="languages" class="mt-0.5 h-5 w-5 text-emerald-400"></i>
+                    <span>Español nativo · Inglés B2</span>
+                  </div>
+                </div>
+
+                <div class="mt-7 grid grid-cols-2 gap-4">
+                  <a href="https://github.com/JuanRaigoso" target="_blank" rel="noreferrer" class="card-hover rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">
+                    <div class="flex items-center gap-3">
+                      <i data-lucide="github" class="h-5 w-5 text-white"></i>
+                      <span class="text-sm font-medium text-white">GitHub</span>
+                    </div>
+                  </a>
+                  <a href="mailto:jraigosoespinosa@gmail.com" class="card-hover rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">
+                    <div class="flex items-center gap-3">
+                      <i data-lucide="mail" class="h-5 w-5 text-white"></i>
+                      <span class="text-sm font-medium text-white">Email</span>
+                    </div>
+                  </a>
+                </div>
+                <p class="mt-4 text-xs text-brand-muted">Reemplaza <span class="text-sky-300">assets/profile.jpg</span> por tu foto real dentro del repositorio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="mb-10 max-w-3xl reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Habilidades</p>
+        <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Bento grid de competencias</h2>
+        <p class="mt-4 text-brand-muted">Una combinación equilibrada entre economía, programación, comunicación y modelamiento.</p>
+      </div>
+
+      <div class="grid auto-rows-[minmax(180px,auto)] gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6 md:col-span-2 xl:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="rounded-2xl bg-sky-400/10 p-3 text-sky-300"><i data-lucide="laptop" class="h-6 w-6"></i></div>
+            <h3 class="text-xl font-semibold text-white">Software & Herramientas</h3>
+          </div>
+          <div class="mt-6 grid gap-3 sm:grid-cols-2">
+            <div class="tool-chip tool-python rounded-2xl p-4">Python</div>
+            <div class="tool-chip tool-r rounded-2xl p-4">R / RStudio</div>
+            <div class="tool-chip tool-powerbi rounded-2xl p-4">Power BI</div>
+            <div class="tool-chip tool-sql rounded-2xl p-4">SQL</div>
+            <div class="tool-chip tool-stata rounded-2xl p-4">Stata</div>
+            <div class="tool-chip tool-mlflow rounded-2xl p-4">MLflow</div>
+          </div>
+        </article>
+
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6 xl:row-span-2">
+          <div class="flex items-center gap-3">
+            <div class="rounded-2xl bg-amber-400/10 p-3 text-amber-300"><i data-lucide="lightbulb" class="h-6 w-6"></i></div>
+            <h3 class="text-xl font-semibold text-white">Blandas</h3>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm text-slate-200">
+            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Pensamiento analítico</li>
+            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Pensamiento crítico</li>
+            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Trabajo en equipo</li>
+            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Autodidacta</li>
+            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Tolerancia al estrés</li>
+            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Buenas relaciones interpersonales</li>
+          </ul>
+        </article>
+
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6 md:col-span-2 xl:col-span-1">
+          <div class="flex items-center gap-3">
+            <div class="rounded-2xl bg-emerald-400/10 p-3 text-emerald-300"><i data-lucide="line-chart" class="h-6 w-6"></i></div>
+            <h3 class="text-xl font-semibold text-white">Técnicas</h3>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm text-slate-200">
+            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Econometría</li>
+            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Series de tiempo</li>
+            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Machine Learning</li>
+            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Deep Learning</li>
+            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Análisis cuantitativo</li>
+          </ul>
+        </article>
+
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6 md:col-span-2 xl:col-span-1">
+          <div class="flex items-center gap-3">
+            <div class="rounded-2xl bg-sky-400/10 p-3 text-sky-300"><i data-lucide="badge-check" class="h-6 w-6"></i></div>
+            <h3 class="text-xl font-semibold text-white">Fortalezas</h3>
+          </div>
+          <p class="mt-6 text-sm leading-7 text-slate-200">
+            Construyo dashboards, automatizo reportes, entreno modelos y convierto resultados técnicos en historias claras para stakeholders.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experiencia" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="mb-10 max-w-3xl reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Experiencia</p>
+        <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Trayectoria profesional completa</h2>
+        <p class="mt-4 text-brand-muted">Incluye experiencia actual, sector público, investigación y acompañamiento a emprendimientos.</p>
+      </div>
+
+      <div class="relative timeline-line space-y-10 pl-10">
+        <article class="reveal relative rounded-3xl border border-white/10 bg-brand-panel p-6 card-hover">
+          <span class="absolute left-[-35px] top-8 flex h-6 w-6 items-center justify-center rounded-full border-4 border-brand-bg bg-emerald-400"></span>
+          <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Actualidad</p>
+              <h3 class="mt-2 text-2xl font-bold text-white">Economista | Analista de Datos · FENALCE</h3>
+              <p class="mt-2 text-sm text-brand-muted">Bogotá, D. C. · Mayo 2024 - Actual</p>
+            </div>
+            <div class="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm text-emerald-300">Sector agrícola</div>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm leading-7 text-slate-200">
+            <li>• Análisis económico del sector agrícola y elaboración de informes técnicos basados en datos nacionales e internacionales.</li>
+            <li>• Construcción, actualización y automatización de dashboards en Power BI para seguimiento de indicadores productivos y de mercado.</li>
+            <li>• Desarrollo de modelos predictivos de series de tiempo aplicando machine learning para pronósticos de precios y producción.</li>
+            <li>• Formulación de proyectos estratégicos para la cadena de cereales y leguminosas.</li>
+            <li>• Generación de informes estadísticos para soporte a decisiones sectoriales.</li>
+          </ul>
+        </article>
+
+        <article class="reveal relative rounded-3xl border border-white/10 bg-brand-panel p-6 card-hover">
+          <span class="absolute left-[-35px] top-8 flex h-6 w-6 items-center justify-center rounded-full border-4 border-brand-bg bg-sky-400"></span>
+          <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">Gestión pública</p>
+              <h3 class="mt-2 text-2xl font-bold text-white">Profesional Observatorio Económico y Social · Alcaldía de Filandia</h3>
+              <p class="mt-2 text-sm text-brand-muted">Filandia, Quindío · Junio 2021 - Diciembre 2023</p>
+            </div>
+            <div class="rounded-2xl border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sm text-sky-300">Sector público</div>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm leading-7 text-slate-200">
+            <li>• Recolección, depuración y procesamiento de datos socioeconómicos utilizando Python y R.</li>
+            <li>• Construcción de indicadores y sistemas de seguimiento del Plan de Desarrollo Municipal.</li>
+            <li>• Elaboración de informes estadísticos y análisis económico-social.</li>
+            <li>• Desarrollo de dashboards en Power BI para monitoreo demográfico, social y económico.</li>
+            <li>• Integración de múltiples fuentes para análisis de pobreza multidimensional, educación, empleo y actividad económica.</li>
+          </ul>
+        </article>
+
+        <article class="reveal relative rounded-3xl border border-white/10 bg-brand-panel p-6 card-hover">
+          <span class="absolute left-[-35px] top-8 flex h-6 w-6 items-center justify-center rounded-full border-4 border-brand-bg bg-amber-400"></span>
+          <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-300">Investigación aplicada</p>
+              <h3 class="mt-2 text-2xl font-bold text-white">Contratista Profesional · Asistente de Investigación</h3>
+              <p class="mt-2 text-sm text-brand-muted">Universidad del Rosario · Quindío · Noviembre 2022 - Febrero 2023</p>
+            </div>
+            <div class="rounded-2xl border border-amber-400/20 bg-amber-400/10 px-4 py-2 text-sm text-amber-300">Academia</div>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm leading-7 text-slate-200">
+            <li>• Proyecto sobre disposición a tomar medidas de adaptación frente al cambio climático en el sector rural.</li>
+            <li>• Procesamiento, limpieza y tabulación de bases de datos provenientes de encuestas rurales.</li>
+            <li>• Acompañamiento en trabajo de campo y recolección de información primaria.</li>
+            <li>• Implementación de análisis estadísticos para caracterización de hogares y patrones de comportamiento.</li>
+            <li>• Organización y documentación metodológica de la información del estudio.</li>
+          </ul>
+        </article>
+
+        <article class="reveal relative rounded-3xl border border-white/10 bg-brand-panel p-6 card-hover">
+          <span class="absolute left-[-35px] top-8 flex h-6 w-6 items-center justify-center rounded-full border-4 border-brand-bg bg-fuchsia-400"></span>
+          <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-fuchsia-300">Desarrollo local</p>
+              <h3 class="mt-2 text-2xl font-bold text-white">Contratista Profesional · Gestor de Emprendimientos</h3>
+              <p class="mt-2 text-sm text-brand-muted">Alcaldía de Filandia · Filandia, Quindío · Marzo 2021 - Junio 2021</p>
+            </div>
+            <div class="rounded-2xl border border-fuchsia-400/20 bg-fuchsia-400/10 px-4 py-2 text-sm text-fuchsia-300">Emprendimiento</div>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm leading-7 text-slate-200">
+            <li>• Levantamiento de datos de los emprendimientos del municipio.</li>
+            <li>• Capacitación y formación a emprendedores.</li>
+            <li>• Caracterización de necesidades y oportunidades.</li>
+            <li>• Asesoría en proyectos y postulaciones.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="proyectos" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="mb-10 max-w-3xl reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Proyectos</p>
+        <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Showcase técnico</h2>
+        <p class="mt-4 text-brand-muted">Aquí es donde tus demos y apps realmente brillan. Solo reemplazas los enlaces cuando quieras.</p>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-2">
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-7">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="rounded-full border border-sky-400/20 bg-sky-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-sky-300">Deep Learning</span>
+              <h3 class="mt-4 text-2xl font-bold text-white">Clasificación de Cáncer de Piel</h3>
+            </div>
+            <div class="rounded-2xl bg-sky-400/10 p-3 text-sky-300">
+              <i data-lucide="activity" class="h-6 w-6"></i>
+            </div>
+          </div>
+          <p class="mt-5 text-sm leading-7 text-slate-200">Sistema de clasificación de cáncer de piel basado en EfficientNetV2M con transfer learning y fine-tuning profundo. Incluye MixUp, CutMix, Label Smoothing, data augmentation y balanceo de clases.</p>
+          <div class="mt-6 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">AUC</p><p class="mt-2 text-xl font-bold text-white">0.96</p></div>
+            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">Precisión</p><p class="mt-2 text-xl font-bold text-white">0.84</p></div>
+            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">Sensibilidad</p><p class="mt-2 text-xl font-bold text-white">0.79</p></div>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-3 text-xs text-brand-muted">
+            <span class="rounded-full border border-white/10 px-3 py-2">TensorFlow</span>
+            <span class="rounded-full border border-white/10 px-3 py-2">Keras</span>
+            <span class="rounded-full border border-white/10 px-3 py-2">MLflow</span>
+            <span class="rounded-full border border-white/10 px-3 py-2">Streamlit</span>
+          </div>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="https://github.com/JuanRaigoso/skin-cancer-classification" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-line bg-brand-bgSoft px-5 py-3 text-sm font-semibold text-white transition hover:border-sky-400/60"><i data-lucide="github" class="h-4 w-4"></i> GitHub</a>
+            <a href="https://huggingface.co/spaces/JuanRaigoso/skin-cancer-classification-medical-v2" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 to-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95"><i data-lucide="external-link" class="h-4 w-4"></i> Demo / App</a>
+          </div>
+        </article>
+
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-7">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300">FinTech / ML</span>
+              <h3 class="mt-4 text-2xl font-bold text-white">Evaluación de Riesgo Crediticio</h3>
+            </div>
+            <div class="rounded-2xl bg-emerald-400/10 p-3 text-emerald-300">
+              <i data-lucide="shield-check" class="h-6 w-6"></i>
+            </div>
+          </div>
+          <p class="mt-5 text-sm leading-7 text-slate-200">Sistema de predicción de morosidad a 2 años con MLP en PyTorch, ingeniería de datos robusta, tratamiento de outliers, transformaciones y trazabilidad experimental con MLflow.</p>
+          <div class="mt-6 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">AUC-ROC</p><p class="mt-2 text-xl font-bold text-white">0.862</p></div>
+            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">Accuracy</p><p class="mt-2 text-xl font-bold text-white">0.852</p></div>
+            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">F1-score</p><p class="mt-2 text-xl font-bold text-white">0.435</p></div>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-3 text-xs text-brand-muted">
+            <span class="rounded-full border border-white/10 px-3 py-2">PyTorch</span>
+            <span class="rounded-full border border-white/10 px-3 py-2">MLflow</span>
+            <span class="rounded-full border border-white/10 px-3 py-2">Scikit-Learn</span>
+            <span class="rounded-full border border-white/10 px-3 py-2">Streamlit</span>
+          </div>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="https://github.com/JuanRaigoso/Credit-Risk-MLP" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-line bg-brand-bgSoft px-5 py-3 text-sm font-semibold text-white transition hover:border-emerald-400/60"><i data-lucide="github" class="h-4 w-4"></i> GitHub</a>
+            <a href="https://credit-mlp-credito-juanraigoso.streamlit.app/" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 to-sky-500 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95"><i data-lucide="external-link" class="h-4 w-4"></i> Demo / App</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="publicaciones" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="mb-10 max-w-3xl reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Publicaciones</p>
+        <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Producción científica</h2>
+        <p class="mt-4 text-brand-muted">Una sección más limpia, editorial y profesional.</p>
+      </div>
+
+      <div class="space-y-4">
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6"><h3 class="text-lg font-semibold text-white">Análisis de los determinantes del rendimiento académico en matemáticas para los estudiantes de Quindío, Colombia, a partir de las pruebas Saber 11°</h3><p class="mt-2 text-sm text-brand-muted">Revista de Investigación, Desarrollo e Innovación (RIDI) · Vol. 15, No. 1 · 2025</p><a class="mt-3 inline-flex text-sm text-sky-300 hover:text-sky-200" href="https://doi.org/10.19053/uptc.20278306.v15.n1.2025.19182" target="_blank" rel="noreferrer">DOI: 10.19053/uptc.20278306.v15.n1.2025.19182</a></article>
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6"><h3 class="text-lg font-semibold text-white">Identificación de la actividad de la toxoplasmosis ocular mediante distintas redes neuronales convolucionales</h3><p class="mt-2 text-sm text-brand-muted">Vitela · Repositorio institucional de la Pontificia Universidad Javeriana · 2025</p><a class="mt-3 inline-flex text-sm text-sky-300 hover:text-sky-200" href="https://vitela.javerianacali.edu.co/items/046358c2-2057-4f05-9007-d7d16fe04ba0" target="_blank" rel="noreferrer">Ver publicación</a></article>
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6"><h3 class="text-lg font-semibold text-white">Participación de la Población Rural del Municipio de Filandia en los Sistemas de Seguridad Social</h3><p class="mt-2 text-sm text-brand-muted">Revista Lasallista de Investigación · Vol. 19, No. 1 · 2022</p><a class="mt-3 inline-flex text-sm text-sky-300 hover:text-sky-200" href="https://doi.org/10.22507/rli.v19n1a14" target="_blank" rel="noreferrer">DOI: 10.22507/rli.v19n1a14</a></article>
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6"><h3 class="text-lg font-semibold text-white">Desigualdad de oportunidades en Colombia: estimación y análisis regional mediante modelos de aprendizaje automático</h3><p class="mt-2 text-sm text-brand-muted">Revista Cuadernos de Economía · En espera de publicación</p><span class="mt-3 inline-flex text-sm text-slate-400">Estado: pendiente de publicación</span></article>
+      </div>
+    </section>
+
+    <section id="certificaciones" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      <div class="mb-10 max-w-3xl reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Certificaciones</p>
+        <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Formación complementaria</h2>
+        <p class="mt-4 text-brand-muted">Agregué una sección específica para reforzar tu perfil técnico y de actualización continua.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6">
+          <div class="flex items-center gap-3"><div class="rounded-2xl bg-emerald-400/10 p-3 text-emerald-300"><i data-lucide="award" class="h-6 w-6"></i></div><h3 class="text-lg font-semibold text-white">Fundamentos en analítica de datos</h3></div>
+          <p class="mt-4 text-sm leading-7 text-slate-200">Correlation One - DS4A · MinTIC</p>
+          <p class="text-sm text-brand-muted">90 horas · Noviembre 2022 - Diciembre 2022</p>
+        </article>
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6">
+          <div class="flex items-center gap-3"><div class="rounded-2xl bg-sky-400/10 p-3 text-sky-300"><i data-lucide="award" class="h-6 w-6"></i></div><h3 class="text-lg font-semibold text-white">Diplomado en Ciencia de Datos</h3></div>
+          <p class="mt-4 text-sm leading-7 text-slate-200">Escuela Superior de Administración Pública - ESAP</p>
+          <p class="text-sm text-brand-muted">Agosto 2022 - Octubre 2022</p>
+        </article>
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6">
+          <div class="flex items-center gap-3"><div class="rounded-2xl bg-amber-400/10 p-3 text-amber-300"><i data-lucide="award" class="h-6 w-6"></i></div><h3 class="text-lg font-semibold text-white">Bootcamp Data Science: Machine Learning con Python</h3></div>
+          <p class="mt-4 text-sm leading-7 text-slate-200">BIT · Corporación Universitaria Iberoamericana</p>
+          <p class="text-sm text-brand-muted">300 horas · Marzo 2022 - Junio 2022</p>
+        </article>
+        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6">
+          <div class="flex items-center gap-3"><div class="rounded-2xl bg-fuchsia-400/10 p-3 text-fuchsia-300"><i data-lucide="award" class="h-6 w-6"></i></div><h3 class="text-lg font-semibold text-white">Diseñando un índice de pobreza multidimensional</h3></div>
+          <p class="mt-4 text-sm leading-7 text-slate-200">PNUD · OPHI</p>
+          <p class="text-sm text-brand-muted">120 horas · Abril 2021</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="border-t border-white/10 bg-brand-bgSoft/60">
+    <div class="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
+      <div class="reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Contacto</p>
+        <h2 class="mt-3 text-3xl font-bold text-white">Construyamos algo con datos</h2>
+        <p class="mt-4 max-w-2xl text-brand-muted">Disponible para roles, consultoría, investigación aplicada y proyectos de analítica, economía cuantitativa, machine learning y visualización.</p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2 reveal">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="card-hover rounded-2xl border border-white/10 bg-brand-panel p-4"><div class="flex items-center gap-3 text-white"><i data-lucide="linkedin" class="h-5 w-5 text-sky-400"></i><span>LinkedIn</span></div></a>
+        <a href="https://github.com/JuanRaigoso" target="_blank" rel="noreferrer" class="card-hover rounded-2xl border border-white/10 bg-brand-panel p-4"><div class="flex items-center gap-3 text-white"><i data-lucide="github" class="h-5 w-5 text-sky-400"></i><span>GitHub</span></div></a>
+        <a href="mailto:jraigosoespinosa@gmail.com" class="card-hover rounded-2xl border border-white/10 bg-brand-panel p-4"><div class="flex items-center gap-3 text-white"><i data-lucide="mail" class="h-5 w-5 text-sky-400"></i><span>Email</span></div></a>
+        <div class="rounded-2xl border border-white/10 bg-brand-panel p-4"><div class="flex items-center gap-3 text-white"><i data-lucide="map-pin" class="h-5 w-5 text-sky-400"></i><span>Quindío, Colombia</span></div></div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/5 px-6 py-5 text-center text-sm text-slate-500">© <span id="year"></span> Juan David Raigoso. Hecho con HTML, Tailwind CSS y Lucide Icons.</div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
 
