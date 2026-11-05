@@ -1,567 +1,1901 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portafolio profesional de Juan David Raigoso, Economista y Científico de Datos." />
-  <title>Juan David Raigoso | Economista & Científico de Datos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan David Raigoso | Economista y científico de datos</title>
+  <meta name="description" content="Portafolio de Juan David Raigoso, economista y magíster en Ciencia de Datos. Series de tiempo, econometría, machine learning y visualización para el sector agrícola, la política pública y la investigación.">
+  <meta name="author" content="Juan David Raigoso">
+  <meta name="theme-color" content="#0b1120">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              bg: '#0b1120',
-              bgSoft: '#111827',
-              panel: '#131c31',
-              panel2: '#1a2540',
-              line: '#24314f',
-              primary: '#22c55e',
-              secondary: '#38bdf8',
-              accent: '#f59e0b',
-              text: '#e5eefb',
-              muted: '#9fb0cc'
-            }
-          },
-          boxShadow: {
-            soft: '0 10px 30px rgba(2,6,23,0.32)',
-            glow: '0 0 0 1px rgba(56,189,248,0.16), 0 18px 60px rgba(2,6,23,0.45)'
-          },
-          backgroundImage: {
-            page: 'radial-gradient(circle at 10% 20%, rgba(34,197,94,0.10), transparent 25%), radial-gradient(circle at 90% 10%, rgba(56,189,248,0.12), transparent 28%), linear-gradient(180deg, #0b1120 0%, #0f172a 100%)',
-            hero: 'linear-gradient(135deg, rgba(56,189,248,0.08), rgba(34,197,94,0.06))'
-          },
-          keyframes: {
-            floaty: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-8px)' }
-            },
-            fadeUp: {
-              '0%': { opacity: '0', transform: 'translateY(24px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' }
-            }
-          },
-          animation: {
-            floaty: 'floaty 6s ease-in-out infinite',
-            fadeUp: 'fadeUp 0.8s ease forwards'
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Si la URL de GitHub Pages es otra, cámbiala en estas líneas y en el bloque JSON-LD -->
+  <link rel="canonical" href="https://juanraigoso.github.io/portfolio-juan-raigoso/">
+  <meta property="og:url" content="https://juanraigoso.github.io/portfolio-juan-raigoso/">
+  <meta property="og:image" content="https://juanraigoso.github.io/portfolio-juan-raigoso/assets/profile.png">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:title" content="Juan David Raigoso | Economista y científico de datos">
+  <meta property="og:description" content="Pronósticos, tableros y modelos de machine learning a partir de datos económicos, sociales y productivos.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322c55e'/%3E%3Cstop offset='1' stop-color='%2338bdf8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230b1120'/%3E%3Cpath d='M13 45 L25 34 L34 39 L51 19' fill='none' stroke='url(%23g)' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <script>document.documentElement.classList.add('js');</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Juan David Raigoso",
+    "jobTitle": "Economista y analista de datos",
+    "worksFor": { "@type": "Organization", "name": "FENALCE" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Universidad del Quindío" },
+      { "@type": "CollegeOrUniversity", "name": "Pontificia Universidad Javeriana" }
+    ],
+    "address": { "@type": "PostalAddress", "addressRegion": "Quindío", "addressCountry": "CO" },
+    "email": "mailto:jraigosoespinosa@gmail.com",
+    "url": "https://juanraigoso.github.io/portfolio-juan-raigoso/",
+    "image": "https://juanraigoso.github.io/portfolio-juan-raigoso/assets/profile.png",
+    "sameAs": ["https://github.com/JuanRaigoso", "https://www.linkedin.com/in/juan-david-r-900824168/"],
+    "knowsAbout": ["Econometría", "Series de tiempo", "Machine learning", "Deep learning", "Python", "R", "Power BI", "SQL"]
+  }
+  </script>
 
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .glass {
-      background: rgba(19, 28, 49, 0.72);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(159, 176, 204, 0.12);
+    /* =========================================================
+       1. Variables
+       ========================================================= */
+    :root {
+      --bg: #0b1120;
+      --bg-2: #0f172a;
+      --panel: #131c31;
+      --panel-2: #1a2540;
+      --line: #24314f;
+      --emerald: #22c55e;
+      --emerald-2: #34d399;
+      --sky: #38bdf8;
+      --amber: #f59e0b;
+      --amber-2: #fbbf24;
+      --violet: #a78bfa;
+      --fuchsia: #e879f9;
+      --text: #e5eefb;
+      --soft: #cbd8ec;
+      --muted: #9fb0cc;
+      --dim: #6f819f;
+      --glass: rgba(19, 28, 49, .62);
+      --glass-2: rgba(11, 17, 32, .55);
+      --stroke: rgba(159, 176, 204, .13);
+      --stroke-2: rgba(159, 176, 204, .22);
+      --grad: linear-gradient(120deg, #22c55e 0%, #38bdf8 100%);
+      --sans: 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+      --r-xl: 32px;
+      --r-lg: 26px;
+      --r: 20px;
+      --r-sm: 14px;
+      --shadow: 0 24px 60px rgba(2, 6, 23, .5);
+      --ease: cubic-bezier(.2, .7, .2, 1);
     }
-    .card-hover {
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+
+    /* =========================================================
+       2. Base
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-    .card-hover:hover {
-      transform: translateY(-8px);
-      border-color: rgba(56, 189, 248, 0.45);
-      box-shadow: 0 0 0 1px rgba(56,189,248,0.12), 0 16px 40px rgba(2,6,23,0.38);
-    }
-    .timeline-line::before {
+    body::before {
       content: '';
-      position: absolute;
-      left: 11px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, rgba(34,197,94,.8), rgba(56,189,248,.45), rgba(36,49,79,.25));
+      position: fixed; inset: 0; z-index: -3;
+      background:
+        radial-gradient(900px 600px at 8% -5%, rgba(34, 197, 94, .10), transparent 60%),
+        radial-gradient(900px 640px at 96% 2%, rgba(56, 189, 248, .12), transparent 60%),
+        linear-gradient(180deg, #0b1120 0%, #0d1527 55%, #0b1120 100%);
     }
-    .grid-glow {
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      mask-image: linear-gradient(to bottom, rgba(255,255,255,0.65), transparent 85%);
-      pointer-events: none;
+    ::selection { background: rgba(56, 189, 248, .32); color: #fff; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button { font: inherit; }
+    :focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; border-radius: 8px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .skip { position: fixed; left: 16px; top: -60px; z-index: 200; padding: 10px 16px; border-radius: 10px; background: var(--sky); color: #04131c; font-weight: 700; text-decoration: none; }
+    .skip:focus { top: 16px; }
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    .ic { width: 18px; height: 18px; flex: none; }
+
+    .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    /* =========================================================
+       3. Botones
+       ========================================================= */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 22px; border-radius: 16px; border: 1px solid transparent;
+      font-weight: 650; font-size: .98rem; line-height: 1.2; text-decoration: none; cursor: pointer;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s, background .25s, color .25s;
     }
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+    .btn-primary { background: var(--grad); color: #04131c; box-shadow: 0 12px 32px rgba(34, 197, 94, .22); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(56, 189, 248, .30); }
+    .btn-ghost { background: rgba(19, 28, 49, .65); border-color: var(--stroke-2); color: #fff; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    .btn-ghost:hover { border-color: rgba(56, 189, 248, .55); transform: translateY(-2px); }
+    .btn-sm { padding: 10px 16px; border-radius: 12px; font-size: .9rem; }
+    .btn .ic-arrow { transition: transform .25s var(--ease); }
+    .btn:hover .ic-arrow { transform: translate(2px, -2px); }
+
+    /* =========================================================
+       4. Encabezado
+       ========================================================= */
+    .header { position: fixed; inset: 0 0 auto 0; z-index: 60; border-bottom: 1px solid transparent; transition: background .35s, border-color .35s; }
+    .header.scrolled { background: rgba(11, 17, 32, .74); border-bottom-color: var(--stroke); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); }
+    .progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--grad); transform-origin: 0 50%; transform: scaleX(var(--sp, 0)); }
+    .nav { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark { width: 40px; height: 40px; border-radius: 13px; display: grid; place-items: center; background: var(--grad); color: #04131c; font-weight: 800; font-size: .82rem; letter-spacing: .04em; font-stretch: 112%; box-shadow: 0 8px 24px rgba(34, 197, 94, .25); }
+    .brand-name { font-weight: 700; color: #fff; font-size: .98rem; line-height: 1.15; }
+    .brand-name small { display: block; color: var(--muted); font-weight: 500; font-size: .76rem; }
+    .nav-links { display: flex; gap: 2px; list-style: none; margin: 0; padding: 5px; border-radius: 999px; background: rgba(19, 28, 49, .55); border: 1px solid var(--stroke); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .nav-links a { display: block; padding: 8px 15px; border-radius: 999px; color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 500; transition: color .2s, background .2s, box-shadow .2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.active { color: #fff; background: rgba(56, 189, 248, .13); box-shadow: inset 0 0 0 1px rgba(56, 189, 248, .28); }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .menu-btn { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--stroke-2); background: rgba(19, 28, 49, .7); color: #fff; place-items: center; cursor: pointer; }
+    .menu-btn .ic-x { display: none; }
+    .menu-btn[aria-expanded="true"] .ic-x { display: block; }
+    .menu-btn[aria-expanded="true"] .ic-menu { display: none; }
+    .mobile-menu { display: none; }
+
+    /* =========================================================
+       5. Portada
+       ========================================================= */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 130px 0 90px; overflow: hidden; isolation: isolate; }
+    .aurora { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+    .aurora span { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .6; animation: drift 24s ease-in-out infinite alternate; }
+    .aurora .a1 { width: 540px; height: 540px; top: -160px; left: -140px; background: rgba(34, 197, 94, .20); }
+    .aurora .a2 { width: 640px; height: 640px; top: 4%; right: -220px; background: rgba(56, 189, 248, .18); animation-delay: -8s; }
+    .aurora .a3 { width: 420px; height: 420px; bottom: -180px; left: 38%; background: rgba(245, 158, 11, .09); animation-delay: -14s; }
+    @keyframes drift { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(50px, 30px) scale(1.08); } 100% { transform: translate(-30px, 60px) scale(.95); } }
+    .grid-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 25%, transparent 75%); mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 25%, transparent 75%); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: 72px; align-items: center; }
+    .status { display: inline-flex; align-items: center; gap: 10px; padding: 8px 15px 8px 13px; border-radius: 999px; background: rgba(34, 197, 94, .08); border: 1px solid rgba(34, 197, 94, .24); color: #86efac; font-size: .88rem; font-weight: 500; }
+    .pulse { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); flex: none; }
+    .pulse::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: inherit; animation: ping 2s cubic-bezier(0, 0, .2, 1) infinite; }
+    @keyframes ping { 75%, 100% { transform: scale(2.8); opacity: 0; } }
+    .hero h1 { margin: 24px 0 0; font-size: clamp(3.1rem, 7.4vw, 6.6rem); line-height: .9; font-weight: 800; font-stretch: 108%; letter-spacing: -.045em; background: linear-gradient(180deg, #ffffff 35%, #b8c9e3 100%); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .06em; }
+    .hero-role { margin: 18px 0 0; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.25; color: var(--soft); }
+    .hero-role .dot { display: inline-block; width: 6px; height: 6px; margin: 0 .55em .22em; border-radius: 50%; background: var(--grad); vertical-align: middle; }
+    .hero-lead { margin: 28px 0 0; font-size: clamp(1.18rem, 1.7vw, 1.42rem); font-weight: 500; color: #e9f1fc; line-height: 1.45; }
+    .rot { display: inline-block; font-weight: 750; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; transition: opacity .35s var(--ease), transform .35s var(--ease); }
+    .rot.out { opacity: 0; transform: translateY(-10px); }
+    .rot.pre { opacity: 0; transform: translateY(10px); transition: none; }
+    .hero-text { margin: 16px 0 0; max-width: 56ch; color: var(--muted); font-size: 1.05rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 36px; padding-top: 26px; border-top: 1px solid var(--stroke); color: var(--muted); font-size: .92rem; }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 9px; }
+    .hero-meta .ic { color: var(--emerald-2); width: 17px; height: 17px; }
+
+    .hero-visual { position: relative; justify-self: center; width: min(100%, 400px); }
+    @property --ang { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+    .ring { position: relative; padding: 2px; border-radius: 36px; background: conic-gradient(from var(--ang), rgba(34, 197, 94, .95), rgba(56, 189, 248, .95), rgba(245, 158, 11, .55), rgba(34, 197, 94, .95)); animation: spin 9s linear infinite; }
+    .ring::before { content: ''; position: absolute; inset: -26px; z-index: -1; border-radius: 60px; background: radial-gradient(closest-side, rgba(56, 189, 248, .28), rgba(34, 197, 94, .12), transparent); filter: blur(10px); }
+    @keyframes spin { to { --ang: 360deg; } }
+    .portrait { position: relative; aspect-ratio: 4 / 5; border-radius: 34px; overflow: hidden; background: var(--panel-2); }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 16%; }
+    .portrait::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 58%, rgba(11, 17, 32, .6) 100%); }
+    .float-card { position: absolute; z-index: 2; display: flex; align-items: center; gap: 12px; padding: 11px 16px 11px 11px; border-radius: 18px; background: rgba(15, 23, 42, .8); border: 1px solid var(--stroke-2); box-shadow: var(--shadow); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); animation: floaty 6s ease-in-out infinite; white-space: nowrap; }
+    .float-card b { display: block; color: #fff; font-size: .86rem; line-height: 1.2; font-weight: 650; }
+    .float-card small { display: block; color: var(--muted); font-size: .75rem; line-height: 1.3; }
+    .fc-ic { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; flex: none; }
+    .fc-1 { top: 9%; left: -64px; }
+    .fc-2 { top: 50%; right: -58px; animation-delay: -2s; }
+    .fc-3 { bottom: -22px; left: -30px; animation-delay: -4s; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    .scroll-hint { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--dim); font-size: .75rem; text-decoration: none; }
+    .scroll-hint span { width: 22px; height: 34px; border-radius: 12px; border: 1.5px solid var(--stroke-2); position: relative; }
+    .scroll-hint span::after { content: ''; position: absolute; left: 50%; top: 7px; width: 3px; height: 7px; margin-left: -1.5px; border-radius: 2px; background: var(--sky); animation: wheel 1.8s ease-in-out infinite; }
+    @keyframes wheel { 0% { opacity: 0; transform: translateY(0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(10px); } }
+
+    /* Cinta de herramientas */
+    .marquee { position: relative; overflow: hidden; padding: 22px 0; border-block: 1px solid var(--stroke); background: rgba(15, 23, 42, .5); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+    .marquee-track { display: flex; width: max-content; animation: marquee 46s linear infinite; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-group { display: flex; gap: 52px; padding-right: 52px; }
+    .marquee-item { display: inline-flex; align-items: center; gap: 14px; color: #c5d3ea; font-weight: 650; font-size: 1.08rem; font-stretch: 106%; white-space: nowrap; }
+    .marquee-item::before { content: ''; width: 7px; height: 7px; border-radius: 2px; transform: rotate(45deg); background: var(--grad); }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* =========================================================
+       6. Secciones y tarjetas
+       ========================================================= */
+    .section { position: relative; padding: 130px 0 0; scroll-margin-top: 70px; }
+    .sec-head { max-width: 780px; margin-bottom: 56px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; margin: 0; color: var(--sky); font-size: .78rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 30px; height: 2px; border-radius: 2px; background: var(--grad); }
+    .sec-head h2 { margin: 18px 0 0; color: #fff; font-size: clamp(2.2rem, 4.4vw, 3.5rem); line-height: 1.04; font-weight: 800; font-stretch: 106%; letter-spacing: -.035em; }
+    .sec-lead { margin: 20px 0 0; max-width: 62ch; color: var(--muted); font-size: 1.1rem; }
+
+    .card { position: relative; background: var(--glass); border: 1px solid var(--stroke); border-radius: var(--r-lg); }
+    .spot { transition: border-color .35s, transform .35s var(--ease), box-shadow .35s; }
+    .spot::after { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 50%), rgba(56, 189, 248, .09), transparent 42%); opacity: 0; transition: opacity .4s; }
+    .spot:hover::after { opacity: 1; }
+    .spot:hover { border-color: rgba(56, 189, 248, .32); }
+    .lift:hover { transform: translateY(-6px); box-shadow: 0 0 0 1px rgba(56, 189, 248, .10), 0 22px 50px rgba(2, 6, 23, .45); }
+    .tile-ic { width: 48px; height: 48px; border-radius: 15px; display: grid; place-items: center; flex: none; }
+    .tile-ic .ic { width: 22px; height: 22px; }
+    .t-emerald { background: rgba(34, 197, 94, .12); color: var(--emerald-2); }
+    .t-sky { background: rgba(56, 189, 248, .12); color: var(--sky); }
+    .t-amber { background: rgba(245, 158, 11, .12); color: var(--amber-2); }
+    .t-violet { background: rgba(167, 139, 250, .14); color: var(--violet); }
+    .t-fuchsia { background: rgba(232, 121, 249, .12); color: var(--fuchsia); }
+    .pill { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; font-size: .78rem; font-weight: 650; border: 1px solid; }
+    .p-emerald { color: #86efac; background: rgba(34, 197, 94, .09); border-color: rgba(34, 197, 94, .25); }
+    .p-sky { color: #7dd3fc; background: rgba(56, 189, 248, .09); border-color: rgba(56, 189, 248, .25); }
+    .p-amber { color: #fcd34d; background: rgba(245, 158, 11, .09); border-color: rgba(245, 158, 11, .28); }
+    .p-violet { color: #c4b5fd; background: rgba(167, 139, 250, .10); border-color: rgba(167, 139, 250, .28); }
+    .p-fuchsia { color: #f0abfc; background: rgba(232, 121, 249, .09); border-color: rgba(232, 121, 249, .26); }
+    .chip { display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; font-size: .8rem; color: var(--soft); border: 1px solid var(--stroke); background: rgba(11, 17, 32, .5); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    /* Aparición al hacer scroll (solo con JavaScript activo) */
+    .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
+    .js .reveal.in { opacity: 1; transform: none; }
+
+    /* =========================================================
+       7. Tablero de trayectoria
+       ========================================================= */
+    .dash { padding: 30px; border-radius: var(--r-xl); background: linear-gradient(180deg, rgba(26, 37, 64, .7), rgba(19, 28, 49, .62)); }
+    .dash-top { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 18px; }
+    .dash-title { display: flex; gap: 14px; align-items: center; }
+    .dash-title h3 { margin: 0; color: #fff; font-size: 1.2rem; font-weight: 700; }
+    .dash-title p { margin: 2px 0 0; color: var(--muted); font-size: .9rem; }
+    .seg { display: inline-flex; padding: 4px; border-radius: 13px; background: rgba(11, 17, 32, .75); border: 1px solid var(--stroke); }
+    .seg button { appearance: none; border: 0; background: transparent; color: var(--muted); font-size: .88rem; font-weight: 650; padding: 9px 16px; border-radius: 10px; cursor: pointer; transition: color .2s, background .2s, box-shadow .2s; }
+    .seg button:hover { color: #fff; }
+    .seg button[aria-pressed="true"] { color: #fff; background: rgba(56, 189, 248, .15); box-shadow: inset 0 0 0 1px rgba(56, 189, 248, .32); }
+    .kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 26px 0 22px; }
+    .kpi { position: relative; padding: 20px 20px 18px; border-radius: 18px; background: var(--glass-2); border: 1px solid var(--stroke); overflow: hidden; }
+    .kpi::before { content: ''; position: absolute; left: 20px; top: 0; width: 34px; height: 3px; border-radius: 0 0 3px 3px; background: var(--k, var(--sky)); }
+    .kpi-val { color: #fff; font-size: 2.3rem; font-weight: 800; font-stretch: 110%; letter-spacing: -.03em; line-height: 1; font-variant-numeric: tabular-nums; }
+    .kpi-val sup { font-size: .55em; vertical-align: .55em; color: var(--k, var(--sky)); margin-left: 2px; }
+    .kpi-label { margin-top: 10px; color: var(--muted); font-size: .86rem; line-height: 1.35; }
+    .dash-body { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 18px; }
+    .chart-box { position: relative; padding: 16px 14px 8px; border-radius: 20px; background: var(--glass-2); border: 1px solid var(--stroke); min-width: 0; }
+    .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 2px 6px 6px; color: var(--muted); font-size: .82rem; }
+    .legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .legend i { width: 10px; height: 10px; border-radius: 3px; }
+    .legend .lg-total i { height: 3px; width: 16px; border-radius: 2px; background: #f1f6ff; }
+    .legend .lg-fc i { width: 16px; height: 0; border-radius: 0; border-top: 2px dashed var(--sky); }
+    .chart { position: relative; outline: none; border-radius: 14px; touch-action: pan-y; }
+    .chart:focus-visible { box-shadow: 0 0 0 2px rgba(56, 189, 248, .6); }
+    .chart svg { overflow: visible; }
+    .c-grid line { stroke: rgba(159, 176, 204, .08); }
+    .c-tick { fill: #7486a6; font: 500 12px var(--sans); }
+    .c-tick.is-fc { fill: #7dd3fc; }
+    .c-today line { stroke: rgba(229, 238, 251, .28); stroke-dasharray: 3 5; }
+    .c-today rect { fill: rgba(56, 189, 248, .13); stroke: rgba(56, 189, 248, .4); }
+    .c-today text { fill: #bae6fd; font: 650 11px var(--sans); }
+    .c-edge { fill: none; stroke-width: 1.5; }
+    .c-total { fill: none; stroke: #f1f6ff; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+    .c-dot { fill: #0b1120; stroke: #f1f6ff; stroke-width: 2; }
+    .c-fcline { fill: none; stroke: var(--sky); stroke-width: 2.2; stroke-dasharray: 6 6; stroke-linecap: round; }
+    .c-fcdot { fill: #0b1120; stroke: var(--sky); stroke-width: 2; }
+    .c-fclabel { fill: #7dd3fc; font: 650 11px var(--sans); }
+    .c-fc { transition: opacity .9s ease; }
+    .c-cross { pointer-events: none; transition: opacity .2s; }
+    .c-cross line { stroke: rgba(229, 238, 251, .35); }
+    .c-cross .halo { fill: rgba(56, 189, 248, .2); }
+    .c-cross .core { fill: #fff; stroke: #0b1120; stroke-width: 2; }
+    .c-band { fill: rgba(56, 189, 248, .07); stroke: rgba(56, 189, 248, .28); transition: opacity .2s; }
+    .c-barlabel { fill: #dbe6f6; font: 700 12px var(--sans); }
+    .c-stack { transform-box: fill-box; transform-origin: 50% 100%; animation: grow .8s var(--ease) both; }
+    .no-anim .c-stack { animation: none; }
+    .hold .c-stack { animation-play-state: paused; }
+    @keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+    .detail { position: relative; border-radius: 20px; background: var(--glass-2); border: 1px solid var(--stroke); }
+    .detail-inner { position: absolute; inset: 0; padding: 24px; overflow: auto; scrollbar-width: thin; scrollbar-color: rgba(159, 176, 204, .25) transparent; }
+    .detail.swap .detail-inner > * { animation: swapIn .45s var(--ease) both; }
+    .detail.scrolly .detail-inner { -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent); mask-image: linear-gradient(180deg, #000 82%, transparent); }
+    .dash.is-anual .lg-total, .dash.is-anual .lg-fc { display: none; }
+    @keyframes swapIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .dd-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .dd-year { color: #fff; font-size: 2.6rem; font-weight: 800; font-stretch: 112%; letter-spacing: -.035em; line-height: 1; }
+    .dd-big { margin: 16px 0 0; color: #fff; font-size: 1.5rem; font-weight: 750; line-height: 1.2; }
+    .dd-big span { color: var(--muted); font-size: .95rem; font-weight: 500; }
+    .dd-break { display: grid; gap: 8px; margin-top: 16px; }
+    .dd-row { display: grid; grid-template-columns: 96px 1fr 22px; align-items: center; gap: 10px; font-size: .82rem; color: var(--muted); }
+    .dd-row .bar { height: 6px; border-radius: 6px; background: rgba(159, 176, 204, .12); overflow: hidden; }
+    .dd-row .bar i { display: block; height: 100%; border-radius: inherit; transition: width .5s var(--ease); }
+    .dd-row b { color: #fff; text-align: right; font-weight: 700; }
+    .dd-sub { margin: 18px 0 10px; padding-top: 16px; border-top: 1px solid var(--stroke); color: var(--dim); font-size: .76rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .dd-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+    .dd-list li { display: grid; grid-template-columns: 10px 1fr; gap: 10px; align-items: start; color: var(--soft); font-size: .9rem; line-height: 1.45; }
+    .dd-list li i { width: 8px; height: 8px; margin-top: .45em; border-radius: 2px; transform: rotate(45deg); }
+    .dd-note { margin: 14px 0 0; color: var(--muted); font-size: .9rem; }
+    .dd-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: var(--sky); font-weight: 700; text-decoration: none; }
+    .dd-cta:hover { color: #7dd3fc; }
+    .dash-foot { margin: 16px 4px 0; color: var(--dim); font-size: .82rem; }
+
+    /* =========================================================
+       8. Sobre mí
+       ========================================================= */
+    .bento { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; }
+    .b-bio { grid-column: span 7; padding: 40px; }
+    .b-edu { grid-column: span 5; padding: 34px; }
+    .bio-text { margin: 0; font-family: var(--serif); font-size: clamp(1.25rem, 1.9vw, 1.5rem); line-height: 1.55; color: #eef4fd; }
+    .bio-text + .bio-text { margin-top: 18px; }
+    .bio-sub { margin: 20px 0 0; color: var(--muted); }
+    .quote { margin: 30px 0 0; padding: 20px 22px; border-radius: 18px; background: rgba(11, 17, 32, .5); border: 1px solid var(--stroke); display: flex; gap: 16px; align-items: flex-start; }
+    .quote p { margin: 0; color: var(--soft); font-style: italic; font-family: var(--serif); font-size: 1.12rem; line-height: 1.5; }
+    .card-title { margin: 0; color: #fff; font-size: 1.08rem; font-weight: 700; }
+    .edu { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 14px; }
+    .edu li { display: flex; gap: 16px; align-items: flex-start; padding: 16px; border-radius: 16px; background: rgba(11, 17, 32, .45); border: 1px solid var(--stroke); }
+    .edu b { display: block; color: #fff; font-size: 1rem; line-height: 1.3; }
+    .edu span { display: block; color: var(--muted); font-size: .9rem; }
+    .edu em { display: inline-block; margin-top: 8px; font-style: normal; font-size: .78rem; color: var(--sky); font-weight: 650; }
+    .facts2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--stroke); }
+    .facts2 h4 { margin: 0 0 10px; color: var(--dim); font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .lang + .lang { margin-top: 12px; }
+    .lang-top { display: flex; justify-content: space-between; font-size: .9rem; color: #fff; }
+    .lang-top span { color: var(--muted); font-size: .8rem; }
+    .cefr { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-top: 7px; }
+    .cefr i { height: 5px; border-radius: 3px; background: rgba(159, 176, 204, .15); }
+    .cefr i.on { background: var(--grad); }
+    .loc { color: #fff; font-size: .95rem; line-height: 1.4; }
+    .loc small { display: block; margin-top: 4px; color: var(--muted); font-size: .84rem; }
+    .sub-h { margin: 64px 0 22px; color: #fff; font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; }
+    .services { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+    .svc { padding: 28px; }
+    .svc h3 { margin: 22px 0 0; color: #fff; font-size: 1.12rem; line-height: 1.3; font-weight: 700; }
+    .svc p { margin: 10px 0 0; color: var(--muted); font-size: .95rem; }
+
+    /* =========================================================
+       9. Experiencia
+       ========================================================= */
+    .timeline { position: relative; padding-left: 74px; }
+    .tl-track { position: absolute; left: 23px; top: 10px; bottom: 10px; width: 2px; border-radius: 2px; background: rgba(159, 176, 204, .12); }
+    .tl-fill { position: absolute; left: 0; top: 0; width: 100%; height: calc(var(--p, 0) * 100%); border-radius: 2px; background: linear-gradient(180deg, var(--emerald), var(--sky)); box-shadow: 0 0 14px rgba(56, 189, 248, .55); }
+    .tl-item { position: relative; }
+    .tl-item + .tl-item { margin-top: 26px; }
+    .tl-dot { position: absolute; left: -74px; top: 30px; width: 48px; height: 48px; border-radius: 15px; display: grid; place-items: center; background: var(--panel); border: 1px solid var(--stroke-2); color: var(--dim); transition: color .4s, border-color .4s, box-shadow .4s, background .4s; }
+    .tl-dot .ic { width: 21px; height: 21px; }
+    .tl-item.lit .tl-dot { color: var(--c); background: #121e36; border-color: color-mix(in srgb, var(--c) 55%, transparent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--c) 10%, transparent), 0 0 26px color-mix(in srgb, var(--c) 30%, transparent); }
+    .role { padding: 32px 34px; }
+    .role-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+    .period { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: .88rem; font-weight: 500; }
+    .period .ic { width: 16px; height: 16px; color: var(--c); }
+    .now { display: inline-flex; align-items: center; gap: 8px; margin-left: 4px; padding: 4px 10px; border-radius: 999px; background: rgba(34, 197, 94, .1); border: 1px solid rgba(34, 197, 94, .25); color: #86efac; font-size: .75rem; font-weight: 700; }
+    .now .pulse { width: 6px; height: 6px; }
+    .role h3 { margin: 14px 0 0; color: #fff; font-size: clamp(1.3rem, 2vw, 1.55rem); font-weight: 750; line-height: 1.25; letter-spacing: -.01em; }
+    .role-org { margin: 6px 0 0; color: var(--soft); }
+    .role-org span { color: var(--muted); }
+    .duties { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 11px; max-width: 78ch; }
+    .duties li { position: relative; padding-left: 26px; color: #d3deef; }
+    .duties li::before { content: ''; position: absolute; left: 4px; top: .62em; width: 8px; height: 8px; border-radius: 2px; transform: rotate(45deg); background: var(--c); opacity: .9; }
+    .more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s var(--ease); }
+    .more > div { overflow: hidden; }
+    .more.open { grid-template-rows: 1fr; }
+    .more .duties { margin-top: 11px; }
+    .more-btn { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; padding: 0; border: 0; background: none; color: var(--sky); font-size: .9rem; font-weight: 650; cursor: pointer; }
+    .more-btn .ic { width: 16px; height: 16px; transition: transform .35s var(--ease); }
+    .more-btn[aria-expanded="true"] .ic { transform: rotate(180deg); }
+    .role .chips { margin-top: 22px; }
+
+    /* =========================================================
+       10. Proyectos
+       ========================================================= */
+    .project { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); overflow: hidden; border-radius: var(--r-xl); }
+    .project + .project { margin-top: 30px; }
+    .project.rev .pv { order: 2; border-right: 0; border-left: 1px solid var(--stroke); }
+    .pv { position: relative; padding: 34px; border-right: 1px solid var(--stroke); background: radial-gradient(500px 340px at 20% 0%, color-mix(in srgb, var(--c) 14%, transparent), transparent 70%), rgba(11, 17, 32, .55); }
+    .pv::before { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px); background-size: 28px 28px; -webkit-mask-image: linear-gradient(180deg, #000, transparent 85%); mask-image: linear-gradient(180deg, #000, transparent 85%); }
+    .pv-label { position: relative; display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; color: var(--dim); font-size: .76rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .pv-label span:last-child { color: var(--c); letter-spacing: .04em; text-transform: none; font-weight: 650; }
+    .pipe { position: relative; display: grid; gap: 10px; }
+    .pipe::before { content: ''; position: absolute; left: 27px; top: 26px; bottom: 26px; width: 2px; background: repeating-linear-gradient(180deg, var(--c) 0 6px, transparent 6px 12px); opacity: .55; animation: flow 1.1s linear infinite; }
+    @keyframes flow { to { background-position: 0 12px; } }
+    .node { position: relative; display: flex; align-items: center; gap: 14px; padding: 9px 14px 9px 9px; border-radius: 15px; background: rgba(19, 28, 49, .92); border: 1px solid var(--stroke); transition: border-color .3s, transform .3s var(--ease); }
+    .node:hover { border-color: color-mix(in srgb, var(--c) 50%, transparent); transform: translateX(4px); }
+    .node-ic { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; flex: none; color: var(--c); background: color-mix(in srgb, var(--c) 15%, transparent); }
+    .node-ic .ic { width: 19px; height: 19px; }
+    .node b { display: block; color: #fff; font-size: .9rem; line-height: 1.25; font-weight: 650; }
+    .node small { display: block; color: var(--muted); font-size: .8rem; line-height: 1.35; }
+    .gauges { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .gauge { padding: 16px 8px 14px; border-radius: 16px; text-align: center; background: rgba(19, 28, 49, .85); border: 1px solid var(--stroke); }
+    .gauge svg { width: 86px; height: 86px; margin: 0 auto; }
+    .g-track { stroke: rgba(159, 176, 204, .13); }
+    .g-val { stroke: var(--gc); stroke-linecap: round; transition: stroke-dashoffset 1.6s var(--ease); }
+    .g-num { fill: #fff; font: 800 17px var(--sans); }
+    .gauge small { display: block; margin-top: 8px; color: var(--muted); font-size: .78rem; line-height: 1.3; }
+    .pt { padding: 44px 44px 40px; display: flex; flex-direction: column; }
+    .pt h3 { margin: 18px 0 0; color: #fff; font-size: clamp(1.75rem, 2.7vw, 2.3rem); font-weight: 800; line-height: 1.08; letter-spacing: -.03em; font-stretch: 104%; }
+    .pt-desc { margin: 16px 0 0; color: var(--soft); font-size: 1.04rem; }
+    .checks { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 12px; }
+    .checks li { display: flex; gap: 12px; align-items: flex-start; color: #d3deef; font-size: .97rem; }
+    .checks .ic { width: 20px; height: 20px; margin-top: 2px; padding: 3px; border-radius: 6px; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); }
+    .pt .chips { margin-top: 24px; }
+    .pt-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 30px; }
+    .shot { display: none; grid-column: 1 / -1; margin: 0; padding: 0 34px 34px; }
+    .shot.is-loaded { display: block; }
+    .shot img { width: 100%; border-radius: 18px; border: 1px solid var(--stroke); }
+
+    /* =========================================================
+       11. Publicaciones
+       ========================================================= */
+    .pubs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .pub { padding: 32px; display: flex; flex-direction: column; overflow: hidden; }
+    .pub-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .pub-year { position: absolute; right: 26px; bottom: 6px; font-size: 5.2rem; font-weight: 800; font-stretch: 115%; letter-spacing: -.05em; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(159, 176, 204, .16); pointer-events: none; user-select: none; }
+    .pub h3 { position: relative; margin: 22px 0 0; color: #fff; font-family: var(--serif); font-size: 1.32rem; font-weight: 500; line-height: 1.38; }
+    .pub-venue { position: relative; margin: 14px 0 0; color: var(--muted); font-size: .93rem; }
+    .pub-actions { position: relative; display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 26px; }
+    .copy-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--stroke-2); background: rgba(11, 17, 32, .55); color: var(--soft); font-size: .88rem; font-weight: 600; cursor: pointer; transition: border-color .2s, color .2s; }
+    .copy-btn:hover { border-color: rgba(56, 189, 248, .5); color: #fff; }
+    .copy-btn .ic { width: 16px; height: 16px; }
+    .copy-btn .ic-check { display: none; color: var(--emerald-2); }
+    .copy-btn.done .ic-check { display: block; }
+    .copy-btn.done .ic-copy { display: none; }
+    .pub-status { display: inline-flex; align-items: center; gap: 9px; color: #fcd34d; font-size: .9rem; font-weight: 600; }
+
+    /* =========================================================
+       12. Habilidades
+       ========================================================= */
+    .skills { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 20px; }
+    .sk { padding: 32px; }
+    .sk-a { grid-column: span 7; }
+    .sk-c { grid-column: span 5; }
+    .sk-b { grid-column: span 7; }
+    .sk-d { grid-column: span 5; }
+    .sk-b .methods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sk-d .soft-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sk-head { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .tools { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .tool { display: flex; align-items: center; gap: 12px; padding: 15px 16px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, .08); background: rgba(17, 24, 39, .6); color: #e8eefa; font-weight: 600; transition: transform .25s var(--ease), border-color .25s, background .25s, box-shadow .25s, color .25s; }
+    .tool i { width: 10px; height: 10px; border-radius: 3px; background: var(--tc); box-shadow: 0 0 12px var(--tc); }
+    .tool:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--tc) 50%, transparent); background: color-mix(in srgb, var(--tc) 13%, transparent); box-shadow: 0 12px 28px rgba(2, 6, 23, .3); color: #fff; }
+    .methods { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .methods li { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; border-radius: 15px; background: rgba(11, 17, 32, .45); border: 1px solid var(--stroke); }
+    .methods b { display: block; color: #fff; font-weight: 650; }
+    .methods span { display: block; color: var(--muted); font-size: .86rem; }
+    .methods .ic { color: var(--emerald-2); margin-top: 3px; }
+    .soft-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .soft-item { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 15px; background: rgba(11, 17, 32, .45); border: 1px solid var(--stroke); color: var(--soft); font-size: .94rem; }
+    .soft-item .ic { color: var(--amber-2); }
+    .lib-chips .chip { padding: 9px 14px; font-size: .86rem; transition: border-color .2s, color .2s; }
+    .lib-chips .chip:hover { border-color: rgba(167, 139, 250, .5); color: #fff; }
+
+    /* =========================================================
+       13. Certificaciones
+       ========================================================= */
+    .certs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .cert { padding: 28px; display: flex; flex-direction: column; }
+    .cert.feat { grid-column: span 2; background: linear-gradient(rgba(19, 28, 49, .92), rgba(19, 28, 49, .92)) padding-box, linear-gradient(130deg, rgba(34, 197, 94, .55), rgba(56, 189, 248, .55), rgba(245, 158, 11, .35)) border-box; border: 1px solid transparent; }
+    .cert-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .cert h3 { margin: 22px 0 0; color: #fff; font-size: 1.14rem; font-weight: 700; line-height: 1.35; }
+    .cert.feat h3 { font-size: 1.5rem; letter-spacing: -.015em; }
+    .cert p { margin: 8px 0 0; color: var(--muted); font-size: .92rem; }
+    .cert .cert-quote { font-family: var(--serif); font-style: italic; color: var(--soft); font-size: 1.05rem; }
+    .cert-when { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 20px; color: var(--dim); font-size: .84rem; }
+    .cert-when .ic { width: 15px; height: 15px; }
+
+    /* =========================================================
+       14. Contacto y pie
+       ========================================================= */
+    .cta { position: relative; overflow: hidden; padding: 64px; border-radius: 36px; background: linear-gradient(var(--panel), var(--panel)) padding-box, linear-gradient(130deg, rgba(34, 197, 94, .6), rgba(56, 189, 248, .6), rgba(245, 158, 11, .4)) border-box; border: 1px solid transparent; isolation: isolate; }
+    .cta::before { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(600px 400px at 0% 0%, rgba(34, 197, 94, .16), transparent 60%), radial-gradient(600px 420px at 100% 100%, rgba(56, 189, 248, .16), transparent 60%); }
+    .cta::after { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px); background-size: 44px 44px; -webkit-mask-image: radial-gradient(ellipse at 70% 30%, #000, transparent 70%); mask-image: radial-gradient(ellipse at 70% 30%, #000, transparent 70%); }
+    .cta-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr); gap: 56px; align-items: center; }
+    .cta h2 { margin: 18px 0 0; color: #fff; font-size: clamp(2.3rem, 4.8vw, 4rem); font-weight: 800; font-stretch: 106%; line-height: 1.02; letter-spacing: -.04em; }
+    .cta-lead { margin: 20px 0 0; max-width: 54ch; color: var(--soft); font-size: 1.1rem; }
+    .mail-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 34px; padding: 10px 10px 10px 22px; border-radius: 20px; background: rgba(11, 17, 32, .6); border: 1px solid var(--stroke-2); width: fit-content; max-width: 100%; }
+    .mail-row a { color: #fff; font-size: clamp(1.02rem, 2.1vw, 1.35rem); font-weight: 700; text-decoration: none; overflow-wrap: anywhere; }
+    .mail-row a:hover { color: #7dd3fc; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .avail { padding: 28px; border-radius: 24px; background: rgba(11, 17, 32, .55); border: 1px solid var(--stroke); }
+    .avail h3 { margin: 0 0 18px; color: #fff; font-size: 1.05rem; font-weight: 700; }
+    .avail ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .avail li { display: flex; gap: 12px; align-items: flex-start; color: var(--soft); font-size: .96rem; line-height: 1.45; }
+    .avail li .ic { color: var(--emerald-2); margin-top: 2px; }
+    .avail-loc { display: flex; gap: 10px; align-items: center; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--stroke); color: var(--muted); font-size: .9rem; }
+    .avail-loc .ic { color: var(--sky); }
+
+    .footer { margin-top: 110px; padding: 34px 0 40px; border-top: 1px solid var(--stroke); }
+    .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; color: var(--dim); font-size: .88rem; }
+    .foot nav { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+    .foot a { color: var(--muted); text-decoration: none; }
+    .foot a:hover { color: #fff; }
+
+    .to-top { position: fixed; right: 22px; bottom: 22px; z-index: 50; width: 48px; height: 48px; border-radius: 15px; display: grid; place-items: center; border: 1px solid var(--stroke-2); background: rgba(19, 28, 49, .85); color: #fff; cursor: pointer; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); opacity: 0; transform: translateY(14px); pointer-events: none; transition: opacity .3s, transform .3s var(--ease), border-color .2s; }
+    .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+    .to-top:hover { border-color: rgba(56, 189, 248, .55); }
+    .toast { position: fixed; left: 50%; bottom: 28px; z-index: 80; display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 14px; background: rgba(15, 23, 42, .95); border: 1px solid rgba(34, 197, 94, .35); color: #fff; font-size: .92rem; font-weight: 600; box-shadow: var(--shadow); transform: translate(-50%, 20px); opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s var(--ease); }
+    .toast .ic { color: var(--emerald-2); }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    /* =========================================================
+       15. Responsive
+       ========================================================= */
+    @media (max-width: 1200px) {
+      .fc-1 { left: -30px; }
+      .fc-2 { right: -26px; }
+      .fc-3 { left: -14px; }
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    @media (max-width: 1100px) {
+      .nav-links, .nav-cv { display: none; }
+      .menu-btn { display: grid; }
+      .mobile-menu { position: absolute; left: 0; right: 0; top: 100%; padding: 10px 24px 24px; background: rgba(11, 17, 32, .96); border-bottom: 1px solid var(--stroke); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+      .mobile-menu.open { display: block; }
+      .mobile-menu ul { list-style: none; margin: 0 auto; padding: 0; max-width: 1240px; }
+      .mobile-menu li a { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--stroke); color: var(--soft); text-decoration: none; font-size: 1.05rem; font-weight: 600; }
+      .mobile-menu li a.active { color: #fff; }
+      .mobile-menu li a.btn { width: 100%; margin-top: 18px; justify-content: center; padding: 14px 22px; border-bottom: 0; color: #04131c; }
+      .dash-body { grid-template-columns: minmax(0, 1fr); }
+      .detail-inner { position: static; }
+      .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
-    .tool-chip {
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(17, 24, 39, 0.60);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+    @media (max-width: 980px) {
+      .hero { min-height: auto; padding: 120px 0 90px; }
+      .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 70px; }
+      .hero-visual { width: min(100%, 360px); }
+      .scroll-hint { display: none; }
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .b-bio, .b-edu { grid-column: span 12; }
+      .project, .project.rev { grid-template-columns: minmax(0, 1fr); }
+      .project.rev .pv { order: 0; border-left: 0; }
+      .pv { border-right: 0; border-bottom: 1px solid var(--stroke); }
+      .project.rev .pv { border-bottom: 1px solid var(--stroke); }
+      .sk-a, .sk-b, .sk-c, .sk-d { grid-column: span 12; }
+      .certs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cta { padding: 48px 36px; }
+      .cta-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
     }
-    .tool-chip:hover {
-      transform: translateY(-4px);
+    @media (max-width: 820px) {
+      .pubs { grid-template-columns: minmax(0, 1fr); }
     }
-    .tool-python:hover {
-      background: rgba(59, 130, 246, 0.14);
-      border-color: rgba(59, 130, 246, 0.45);
-      box-shadow: 0 0 0 1px rgba(59,130,246,0.12), 0 12px 28px rgba(2,6,23,0.24);
-      color: #dbeafe;
+    @media (max-width: 640px) {
+      .container { padding: 0 18px; }
+      .section { padding-top: 96px; }
+      .sec-head { margin-bottom: 40px; }
+      .brand-name small { display: none; }
+      .hero { padding: 108px 0 80px; }
+      .hero-actions .btn { flex: 1 1 100%; }
+      .hero-visual { width: min(100%, 300px); }
+      .fc-1 { left: -12px; top: 6%; }
+      .fc-2 { right: -12px; top: auto; bottom: 22%; }
+      .fc-3 { display: none; }
+      .float-card { padding: 9px 13px 9px 9px; }
+      .fc-ic { width: 32px; height: 32px; border-radius: 10px; }
+      .dash { padding: 18px; border-radius: 24px; }
+      .kpi { padding: 16px; }
+      .kpi-val { font-size: 1.85rem; }
+      .chart-box { padding: 12px 6px 6px; }
+      .detail { padding: 20px; }
+      .b-bio, .b-edu { padding: 26px; }
+      .facts2 { grid-template-columns: minmax(0, 1fr); }
+      .services { grid-template-columns: minmax(0, 1fr); }
+      .timeline { padding-left: 0; }
+      .tl-track, .tl-dot { display: none; }
+      .role { padding: 26px 22px; }
+      .pv { padding: 22px; }
+      .pt { padding: 28px 22px 26px; }
+      .shot { padding: 0 22px 22px; }
+      .gauge svg { width: 72px; height: 72px; }
+      .pub { padding: 26px 22px; }
+      .pub-year { top: 16px; bottom: auto; right: 18px; font-size: 3.2rem; }
+      .sk { padding: 24px 20px; }
+      .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sk-d .soft-grid { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+      .soft-item { padding: 12px 14px; }
+      .sk-b .methods { grid-template-columns: minmax(0, 1fr); }
+      .certs { grid-template-columns: minmax(0, 1fr); }
+      .cert.feat { grid-column: span 1; }
+      .cta { padding: 36px 22px; border-radius: 28px; }
+      .mail-row { width: 100%; padding-left: 16px; }
     }
-    .tool-r:hover {
-      background: rgba(96, 165, 250, 0.14);
-      border-color: rgba(96, 165, 250, 0.45);
-      box-shadow: 0 0 0 1px rgba(96,165,250,0.12), 0 12px 28px rgba(2,6,23,0.24);
-      color: #dbeafe;
-    }
-    .tool-powerbi:hover {
-      background: rgba(250, 204, 21, 0.14);
-      border-color: rgba(250, 204, 21, 0.45);
-      box-shadow: 0 0 0 1px rgba(250,204,21,0.10), 0 12px 28px rgba(2,6,23,0.24);
-      color: #fef9c3;
-    }
-    .tool-sql:hover {
-      background: rgba(45, 212, 191, 0.14);
-      border-color: rgba(45, 212, 191, 0.45);
-      box-shadow: 0 0 0 1px rgba(45,212,191,0.10), 0 12px 28px rgba(2,6,23,0.24);
-      color: #ccfbf1;
-    }
-    .tool-stata:hover {
-      background: rgba(20, 184, 166, 0.14);
-      border-color: rgba(20, 184, 166, 0.45);
-      box-shadow: 0 0 0 1px rgba(20,184,166,0.10), 0 12px 28px rgba(2,6,23,0.24);
-      color: #ccfbf1;
-    }
-    .tool-mlflow:hover {
-      background: rgba(168, 85, 247, 0.14);
-      border-color: rgba(168, 85, 247, 0.45);
-      box-shadow: 0 0 0 1px rgba(168,85,247,0.10), 0 12px 28px rgba(2,6,23,0.24);
-      color: #f3e8ff;
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+      .marquee-track { transform: none !important; }
     }
   </style>
 </head>
-<body class="bg-brand-bg text-brand-text bg-page">
-  <header class="sticky top-0 z-50 border-b border-white/5 bg-brand-bg/75 backdrop-blur-xl">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-      <a href="#inicio" class="text-sm font-bold tracking-[0.35em] text-white">JDR</a>
-      <div class="hidden gap-6 text-sm text-brand-muted md:flex">
-        <a href="#habilidades" class="transition hover:text-white">Habilidades</a>
-        <a href="#experiencia" class="transition hover:text-white">Experiencia</a>
-        <a href="#proyectos" class="transition hover:text-white">Proyectos</a>
-        <a href="#publicaciones" class="transition hover:text-white">Publicaciones</a>
-        <a href="#certificaciones" class="transition hover:text-white">Certificaciones</a>
-        <a href="#contacto" class="transition hover:text-white">Contacto</a>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <!-- =========================================================
+       Íconos (trazos propios, sin librerías externas)
+       ========================================================= -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5"/><path d="m16 7 5 5-5 5"/><path d="m13.5 4-3 16"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.6-4 4.6-6 8-6s6.4 2 8 6"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11.2a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.6"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9S9.4 5.8 12 3z"/></symbol>
+      <symbol id="i-suitcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7"/><path d="M3 12.5h18"/></symbol>
+      <symbol id="i-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.2V16c1.8 1.8 4 2.7 6 2.7s4.2-.9 6-2.7v-4.8"/><path d="M22 9v5.5"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="m8 14 3.5-3.5 3 3L20 8"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16"/><path d="M15 9h4a1 1 0 0 1 1 1v11"/><path d="M3 21h18"/><path d="M8 8h3M8 12h3M8 16h3"/></symbol>
+      <symbol id="i-present" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8"/><path d="m7 12 3-3 2.5 2.5L16 8"/></symbol>
+      <symbol id="i-dash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="9" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/><rect x="3" y="14" width="8" height="7" rx="1.5"/></symbol>
+      <symbol id="i-net" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="m6.7 7.1 3.6 3.8M6.7 16.9l3.6-3.8M13.7 10.9l3.6-3.8M13.7 13.1l3.6 3.8"/></symbol>
+      <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6.5L4.6 18.2A1.9 1.9 0 0 0 6.2 21h11.6a1.9 1.9 0 0 0 1.6-2.8L14 9.5V3"/><path d="M7.2 15h9.6"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"/><path d="M12 6v13.5"/></symbol>
+      <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.6 13.9 7.5 22l4.5-2.6 4.5 2.6-1.1-8.1"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15h-.5A1.5 1.5 0 0 1 3 13.5v-9A1.5 1.5 0 0 1 4.5 3h9A1.5 1.5 0 0 1 15 4.5V5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="2.8"/><path d="M4 5.5v13c0 1.5 3.6 2.8 8 2.8s8-1.3 8-2.8v-13"/><path d="M4 12c0 1.5 3.6 2.8 8 2.8s8-1.3 8-2.8"/></symbol>
+      <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.2V19l-4 2v-7.8z"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18.5a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 9.6a4.5 4.5 0 0 1-.5 8.9"/><path d="M12 13v7"/><path d="m9 16 3-3 3 3"/></symbol>
+      <symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1.2-3.4 3.6-5 6.5-5s5.3 1.6 6.5 5"/><circle cx="17" cy="9" r="2.8"/><path d="M17 14.5c2.2 0 3.9 1.3 4.8 3.8"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.9 9l5.6 1.9-5.6 1.9L12 18.5l-1.9-5.7L4.5 10.9 10.1 9z"/></symbol>
+      <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.3 1.1 2.2h5c0-.9.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v6c0 4.7 3.2 7.9 7.5 9 4.3-1.1 7.5-4.3 7.5-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></symbol>
+      <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 4A3 3 0 0 0 6.6 7.7 3.3 3.3 0 0 0 5 13.6 3.4 3.4 0 0 0 9.5 19V4z"/><path d="M14.5 4a3 3 0 0 1 2.9 3.7 3.3 3.3 0 0 1 1.6 5.9 3.4 3.4 0 0 1-4.5 5.4V4z"/><path d="M9.5 9H8M14.5 9H16M9.5 14H8M14.5 14H16"/></symbol>
+      <symbol id="i-msg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 12.5h5"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- =========================================================
+       Encabezado
+       ========================================================= -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Juan David Raigoso, inicio">
+        <span class="brand-mark" aria-hidden="true">JDR</span>
+        <span class="brand-name">Juan David Raigoso<small>Economista y científico de datos</small></span>
+      </a>
+      <nav aria-label="Principal">
+        <ul class="nav-links">
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#publicaciones">Publicaciones</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-primary btn-sm nav-cv" href="assets/HV-%20Juan%20D.%20Raigoso.pdf" download="HV-Juan-David-Raigoso.pdf"><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>Descargar CV</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+          <svg class="ic ic-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="ic ic-x" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
       </div>
-    </nav>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a></li>
+        <li><a href="#experiencia">Experiencia <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a></li>
+        <li><a href="#proyectos">Proyectos <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a></li>
+        <li><a href="#publicaciones">Publicaciones <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a></li>
+        <li><a href="#habilidades">Habilidades <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a></li>
+        <li><a href="#contacto">Contacto <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a></li>
+        <li><a class="btn btn-primary" href="assets/HV-%20Juan%20D.%20Raigoso.pdf" download="HV-Juan-David-Raigoso.pdf"><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>Descargar hoja de vida</a></li>
+      </ul>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
   </header>
 
-  <main>
-    <section id="inicio" class="relative overflow-hidden">
-      <div class="grid-glow"></div>
-      <div class="mx-auto grid min-h-[92vh] max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-20">
-        <div class="reveal">
-          <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/15 bg-emerald-400/10 px-4 py-2 text-sm text-emerald-300">
-            <i data-lucide="sparkles" class="h-4 w-4"></i>
-            Economista · Científico de Datos · Investigación aplicada
-          </p>
-          <h1 class="max-w-4xl text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-7xl">
-            Juan David Raigoso
-          </h1>
-          <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
-            Transformo datos económicos, sociales y productivos en modelos, tableros e insights
-            accionables con una mezcla de rigor cuantitativo, machine learning y diseño analítico.
-          </p>
-          <p class="mt-6 max-w-3xl text-base leading-7 text-brand-muted">
-            Mi perfil integra economía, ciencia de datos y visualización para construir soluciones que sirvan
-            tanto a investigación como a operación, política pública y toma de decisiones empresariales.
-          </p>
+  <main id="main">
+    <!-- =========================================================
+         Portada
+         ========================================================= -->
+    <section class="hero" id="inicio">
+      <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+      <div class="grid-bg" aria-hidden="true"></div>
 
-          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-            <a href="HV-Juan-D-Raigoso.pdf" download class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 to-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02]">
-              <i data-lucide="download" class="h-4 w-4"></i>
-              Download CV
+      <div class="container hero-grid">
+        <div>
+          <p class="status reveal"><span class="pulse"></span>Disponible para nuevos proyectos y oportunidades</p>
+          <h1 class="reveal" style="--d:.08s">Juan David<br>Raigoso</h1>
+          <p class="hero-role reveal" style="--d:.16s">Economista<span class="dot" aria-hidden="true"></span>Científico de datos<span class="dot" aria-hidden="true"></span>Docente</p>
+          <p class="hero-lead reveal" style="--d:.24s">
+            <span class="sr-only">Convierto datos en pronósticos, tableros de decisión, modelos predictivos y evidencia para política pública.</span>
+            <span aria-hidden="true">Convierto datos en <span class="rot">pronósticos</span></span>
+          </p>
+          <p class="hero-text reveal" style="--d:.3s">
+            Magíster en Ciencia de Datos. Integro econometría, machine learning y visualización para resolver
+            problemas reales del sector agrícola, el sector público y la academia.
+          </p>
+          <div class="hero-actions reveal" style="--d:.36s">
+            <a class="btn btn-primary" href="assets/HV-%20Juan%20D.%20Raigoso.pdf" download="HV-Juan-David-Raigoso.pdf">
+              <svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>Descargar hoja de vida
             </a>
-            <a href="#proyectos" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-line bg-brand-panel/60 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-sky-400/60 hover:text-white">
-              <i data-lucide="folder-kanban" class="h-4 w-4"></i>
-              Ver proyectos
-            </a>
+            <a class="btn btn-ghost" href="#proyectos">Ver proyectos<svg class="ic ic-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
-
-          <div class="mt-10 grid gap-4 sm:grid-cols-3">
-            <div class="card-hover rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="text-2xl font-bold text-white">4+ años</p>
-              <p class="mt-1 text-sm text-brand-muted">Experiencia en análisis, modelamiento y visualización</p>
-            </div>
-            <div class="card-hover rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="text-2xl font-bold text-white">MSc.</p>
-              <p class="mt-1 text-sm text-brand-muted">Maestría en Ciencia de Datos con enfoque aplicado</p>
-            </div>
-            <div class="card-hover rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="text-2xl font-bold text-white">4</p>
-              <p class="mt-1 text-sm text-brand-muted">Publicaciones y productos científicos destacados</p>
-            </div>
+          <div class="hero-meta reveal" style="--d:.42s">
+            <span><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Quindío, Colombia</span>
+            <span><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>Español nativo, inglés B2</span>
+            <span><svg class="ic" aria-hidden="true"><use href="#i-suitcase"/></svg>Disponibilidad para viajar</span>
           </div>
         </div>
 
-        <div class="reveal glass rounded-[2rem] p-5 shadow-glow">
-          <div class="rounded-[1.75rem] border border-white/10 bg-hero p-6 lg:p-7">
-            <div class="grid gap-6 md:grid-cols-[0.85fr_1.15fr] md:items-center">
-              <div class="relative mx-auto w-full max-w-[260px] animate-floaty">
-                <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-emerald-400/20 via-sky-400/10 to-amber-300/10 blur-2xl"></div>
-                <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-brand-panel2 p-3 shadow-soft">
-                  <img src="assets/profile.png" alt="Foto de Juan David Raigoso" class="h-[320px] w-full rounded-[1.35rem] object-cover" />
-                </div>
-              </div>
+        <div class="hero-visual reveal" style="--d:.2s">
+          <div class="ring">
+            <div class="portrait">
+              <img src="assets/profile.png" alt="Retrato de Juan David Raigoso" width="400" height="500" fetchpriority="high">
+            </div>
+          </div>
+          <div class="float-card fc-1">
+            <span class="fc-ic t-sky"><svg class="ic" aria-hidden="true"><use href="#i-grad"/></svg></span>
+            <span><b>M.Sc. Ciencia de Datos</b><small>Pontificia Universidad Javeriana</small></span>
+          </div>
+          <div class="float-card fc-2">
+            <span class="fc-ic t-emerald"><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg></span>
+            <span><b>Economista y analista de datos</b><small>FENALCE</small></span>
+          </div>
+          <div class="float-card fc-3">
+            <span class="fc-ic t-amber"><svg class="ic" aria-hidden="true"><use href="#i-present"/></svg></span>
+            <span><b>Docente universitario</b><small>Universidad La Gran Colombia</small></span>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#trayectoria" aria-label="Bajar a la trayectoria"><span></span></a>
+    </section>
 
+    <!-- Cinta de herramientas -->
+    <div class="marquee" aria-label="Herramientas con las que trabajo">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="marquee-item">Python</span><span class="marquee-item">R y RStudio</span><span class="marquee-item">SQL</span>
+          <span class="marquee-item">Power BI</span><span class="marquee-item">Stata</span><span class="marquee-item">PyTorch</span>
+          <span class="marquee-item">TensorFlow</span><span class="marquee-item">Scikit-learn</span><span class="marquee-item">MLflow</span>
+          <span class="marquee-item">Streamlit</span><span class="marquee-item">Power Automate</span><span class="marquee-item">Series de tiempo</span>
+          <span class="marquee-item">Econometría</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span class="marquee-item">Python</span><span class="marquee-item">R y RStudio</span><span class="marquee-item">SQL</span>
+          <span class="marquee-item">Power BI</span><span class="marquee-item">Stata</span><span class="marquee-item">PyTorch</span>
+          <span class="marquee-item">TensorFlow</span><span class="marquee-item">Scikit-learn</span><span class="marquee-item">MLflow</span>
+          <span class="marquee-item">Streamlit</span><span class="marquee-item">Power Automate</span><span class="marquee-item">Series de tiempo</span>
+          <span class="marquee-item">Econometría</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         Trayectoria (tablero interactivo)
+         ========================================================= -->
+    <section class="section" id="trayectoria">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Trayectoria</p>
+          <h2>Mi recorrido, contado como lo contaría un científico de datos</h2>
+          <p class="sec-lead">Cada título, cargo, publicación y certificación es un dato. Recorre la serie año por año y mira hacia dónde apunta el pronóstico.</p>
+        </div>
+
+        <div class="card dash reveal" id="dash">
+          <div class="dash-top">
+            <div class="dash-title">
+              <span class="tile-ic t-sky"><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg></span>
               <div>
-                <div class="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
-                  <div>
-                    <p class="text-sm uppercase tracking-[0.3em] text-sky-300">Perfil profesional</p>
-                    <h2 class="mt-2 text-2xl font-bold text-white">Economía + Data Science</h2>
-                  </div>
-                  <div class="rounded-2xl border border-sky-400/20 bg-sky-400/10 p-3 text-sky-300">
-                    <i data-lucide="brain-circuit" class="h-7 w-7"></i>
-                  </div>
-                </div>
-
-                <div class="mt-6 space-y-4 text-sm text-slate-200">
-                  <div class="flex items-start gap-3">
-                    <i data-lucide="graduation-cap" class="mt-0.5 h-5 w-5 text-emerald-400"></i>
-                    <span>MSc. en Ciencia de Datos · Pontificia Universidad Javeriana</span>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <i data-lucide="briefcase-business" class="mt-0.5 h-5 w-5 text-emerald-400"></i>
-                    <span>Economista y Analista de Datos en FENALCE</span>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <i data-lucide="map-pin" class="mt-0.5 h-5 w-5 text-emerald-400"></i>
-                    <span>Quindío, Colombia</span>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <i data-lucide="languages" class="mt-0.5 h-5 w-5 text-emerald-400"></i>
-                    <span>Español nativo · Inglés B2</span>
-                  </div>
-                </div>
-
-                <div class="mt-7 grid grid-cols-2 gap-4">
-                  <a href="https://github.com/JuanRaigoso" target="_blank" rel="noreferrer" class="card-hover rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">
-                    <div class="flex items-center gap-3">
-                      <i data-lucide="github" class="h-5 w-5 text-white"></i>
-                      <span class="text-sm font-medium text-white">GitHub</span>
-                    </div>
-                  </a>
-                  <a href="mailto:jraigosoespinosa@gmail.com" class="card-hover rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">
-                    <div class="flex items-center gap-3">
-                      <i data-lucide="mail" class="h-5 w-5 text-white"></i>
-                      <span class="text-sm font-medium text-white">Email</span>
-                    </div>
-                  </a>
-                </div>
-                <p class="mt-4 text-xs text-brand-muted">Reemplaza <span class="text-sky-300">assets/profile.png</span> por tu foto real dentro del repositorio.</p>
+                <h3>Hitos profesionales y académicos</h3>
+                <p>2020 a hoy, con proyección a dos años</p>
               </div>
             </div>
+            <div class="seg" role="group" aria-label="Vista de la gráfica">
+              <button type="button" data-mode="acum" aria-pressed="true">Acumulado</button>
+              <button type="button" data-mode="anual" aria-pressed="false">Por año</button>
+            </div>
           </div>
+
+          <div class="kpis">
+            <div class="kpi" style="--k:#34d399"><div class="kpi-val"><span class="count" data-to="5" id="kpi-years">0</span><sup>+</sup></div><div class="kpi-label">Años trabajando con datos</div></div>
+            <div class="kpi" style="--k:#fbbf24"><div class="kpi-val"><span class="count" data-to="4">0</span></div><div class="kpi-label">Publicaciones y productos científicos</div></div>
+            <div class="kpi" style="--k:#38bdf8"><div class="kpi-val"><span class="count" data-to="5">0</span></div><div class="kpi-label">Certificaciones en datos y analítica</div></div>
+            <div class="kpi" style="--k:#a78bfa"><div class="kpi-val"><span class="count" data-to="2">0</span></div><div class="kpi-label">Modelos desplegados como aplicación web</div></div>
+          </div>
+
+          <div class="dash-body">
+            <div class="chart-box">
+              <div class="legend" aria-hidden="true">
+                <span><i style="background:#34d399"></i>Experiencia</span>
+                <span><i style="background:#38bdf8"></i>Formación</span>
+                <span><i style="background:#fbbf24"></i>Publicaciones</span>
+                <span class="lg-total"><i></i>Total</span>
+                <span class="lg-fc"><i></i>Pronóstico</span>
+              </div>
+              <div class="chart" tabindex="0" role="group" aria-label="Gráfica de hitos por año. Usa las flechas izquierda y derecha para recorrer los años."></div>
+            </div>
+            <aside class="detail" aria-live="polite"><div class="detail-inner"></div></aside>
+          </div>
+          <p class="dash-foot">El pronóstico es una regresión por mínimos cuadrados ordinarios sobre el total acumulado, con intervalo de predicción del 95 %.</p>
         </div>
       </div>
     </section>
 
-    <section id="habilidades" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <div class="mb-10 max-w-3xl reveal">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Habilidades</p>
-        <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Competencias</h2>
-        <p class="mt-4 text-brand-muted">Una combinación equilibrada entre economía, programación, comunicación y modelamiento.</p>
+    <!-- =========================================================
+         Sobre mí
+         ========================================================= -->
+    <section class="section" id="sobre-mi">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Sobre mí</p>
+          <h2>Economista de formación, científico de datos de oficio</h2>
+        </div>
+
+        <div class="bento">
+          <article class="card spot b-bio reveal">
+            <p class="bio-text">
+              Soy economista de la Universidad del Quindío y magíster en Ciencia de Datos de la Pontificia Universidad Javeriana.
+              Trabajo como economista y analista de datos en FENALCE y enseño Estadística e Investigación y Análisis de Datos
+              en la Universidad La Gran Colombia.
+            </p>
+            <p class="bio-sub">
+              Uso Python, R, SQL, Power BI y Stata para estructurar datos, automatizar procesos, construir indicadores y modelos
+              predictivos, e investigar problemas económicos, sociales y productivos.
+            </p>
+            <div class="quote">
+              <span class="tile-ic t-emerald"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg></span>
+              <p>Construyo tableros, automatizo reportes, entreno modelos y convierto resultados técnicos en historias claras para quienes toman decisiones.</p>
+            </div>
+          </article>
+
+          <article class="card spot b-edu reveal" style="--d:.1s">
+            <h3 class="card-title">Formación académica</h3>
+            <ul class="edu">
+              <li>
+                <span class="tile-ic t-sky"><svg class="ic" aria-hidden="true"><use href="#i-grad"/></svg></span>
+                <div><b>Maestría en Ciencia de Datos</b><span>Pontificia Universidad Javeriana</span><em>2023 a 2025</em></div>
+              </li>
+              <li>
+                <span class="tile-ic t-emerald"><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg></span>
+                <div><b>Economía</b><span>Universidad del Quindío</span><em>2015 a 2020</em></div>
+              </li>
+            </ul>
+            <div class="facts2">
+              <div>
+                <h4>Idiomas</h4>
+                <div class="lang">
+                  <div class="lang-top">Español <span>Nativo</span></div>
+                  <div class="cefr" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+                </div>
+                <div class="lang">
+                  <div class="lang-top">Inglés <span>B2, intermedio alto</span></div>
+                  <div class="cefr" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+                </div>
+              </div>
+              <div>
+                <h4>Ubicación</h4>
+                <p class="loc">Quindío, Colombia<small>Con disponibilidad para viajar</small></p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="sub-h reveal">En qué puedo aportar</h3>
+        <div class="services">
+          <article class="card spot lift svc reveal">
+            <span class="tile-ic t-emerald"><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg></span>
+            <h3>Pronósticos y series de tiempo</h3>
+            <p>Modelos de machine learning para anticipar precios y producción, con validación y seguimiento.</p>
+          </article>
+          <article class="card spot lift svc reveal" style="--d:.08s">
+            <span class="tile-ic t-sky"><svg class="ic" aria-hidden="true"><use href="#i-dash"/></svg></span>
+            <h3>Tableros y automatización</h3>
+            <p>Dashboards en Power BI y flujos en Python y Power Automate que reemplazan procesos manuales.</p>
+          </article>
+          <article class="card spot lift svc reveal" style="--d:.16s">
+            <span class="tile-ic t-violet"><svg class="ic" aria-hidden="true"><use href="#i-net"/></svg></span>
+            <h3>Machine y deep learning</h3>
+            <p>Redes convolucionales, MLP y modelos clásicos con experimentos trazables en MLflow.</p>
+          </article>
+          <article class="card spot lift svc reveal" style="--d:.24s">
+            <span class="tile-ic t-amber"><svg class="ic" aria-hidden="true"><use href="#i-flask"/></svg></span>
+            <h3>Investigación y política pública</h3>
+            <p>Econometría, indicadores territoriales y pobreza multidimensional para decidir con evidencia.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="grid auto-rows-[minmax(180px,auto)] gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6 md:col-span-2 xl:col-span-2">
-          <div class="flex items-center gap-3">
-            <div class="rounded-2xl bg-sky-400/10 p-3 text-sky-300"><i data-lucide="laptop" class="h-6 w-6"></i></div>
-            <h3 class="text-xl font-semibold text-white">Software & Herramientas</h3>
+    <!-- =========================================================
+         Experiencia
+         ========================================================= -->
+    <section class="section" id="experiencia">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Experiencia</p>
+          <h2>Experiencia profesional</h2>
+          <p class="sec-lead">Desde 2021 entre el gremio agrícola, la docencia universitaria, la gestión pública y la investigación aplicada.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-track" aria-hidden="true"><div class="tl-fill"></div></div>
+
+          <article class="tl-item reveal" style="--c:#34d399">
+            <span class="tl-dot" aria-hidden="true"><svg class="ic"><use href="#i-chart"/></svg></span>
+            <div class="card spot role">
+              <div class="role-top">
+                <span class="period"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Mayo 2024 a la fecha<span class="now"><span class="pulse"></span>Actual</span></span>
+                <span class="pill p-emerald">Sector agrícola</span>
+              </div>
+              <h3>Economista y analista de datos</h3>
+              <p class="role-org">FENALCE, Federación Nacional de Cultivadores de Cereales <span>· Bogotá, D. C.</span></p>
+              <ul class="duties">
+                <li>Modelos predictivos de series de tiempo con machine learning para pronosticar precios y producción.</li>
+                <li>Construcción, actualización y automatización de dashboards en Power BI para indicadores productivos y de mercado.</li>
+                <li>Automatización de tareas y análisis de datos con Python y Power Automate, reduciendo tiempos y procesos manuales.</li>
+              </ul>
+              <div class="more" id="more-1" inert>
+                <div>
+                  <ul class="duties">
+                    <li>Análisis económico del sector agrícola e informes técnicos con datos nacionales e internacionales.</li>
+                    <li>Informes estadísticos y económicos para el seguimiento de indicadores productivos.</li>
+                    <li>Apoyo en el diseño y la formulación de proyectos estratégicos para la cadena de cereales y leguminosas.</li>
+                  </ul>
+                </div>
+              </div>
+              <button class="more-btn" type="button" aria-expanded="false" aria-controls="more-1" data-more="3">Ver 3 funciones más<svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></button>
+              <div class="chips"><span class="chip">Python</span><span class="chip">Power BI</span><span class="chip">Power Automate</span><span class="chip">Series de tiempo</span><span class="chip">Machine learning</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal" style="--c:#38bdf8">
+            <span class="tl-dot" aria-hidden="true"><svg class="ic"><use href="#i-present"/></svg></span>
+            <div class="card spot role">
+              <div class="role-top">
+                <span class="period"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Agosto 2026 a la fecha<span class="now"><span class="pulse"></span>Actual</span></span>
+                <span class="pill p-sky">Docencia</span>
+              </div>
+              <h3>Docente catedrático de Estadística e Investigación y Análisis de Datos</h3>
+              <p class="role-org">Universidad La Gran Colombia <span>· Programa de Gobierno y Relaciones Internacionales</span></p>
+              <ul class="duties">
+                <li>Métodos cuantitativos aplicados a las ciencias sociales, el gobierno y las relaciones internacionales.</li>
+                <li>Estadística descriptiva e inferencial, probabilidad, distribuciones, intervalos de confianza, pruebas de hipótesis y muestreo.</li>
+                <li>Preparación, integración, visualización y análisis de datos con herramientas computacionales, incluidas correlación y regresión lineal.</li>
+              </ul>
+              <div class="more" id="more-2" inert>
+                <div>
+                  <ul class="duties">
+                    <li>Diseño de ejercicios y proyectos aplicados a problemas sociales, económicos y de política pública con evidencia cuantitativa.</li>
+                  </ul>
+                </div>
+              </div>
+              <button class="more-btn" type="button" aria-expanded="false" aria-controls="more-2" data-more="1">Ver 1 función más<svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></button>
+              <div class="chips"><span class="chip">Estadística</span><span class="chip">Regresión</span><span class="chip">Muestreo</span><span class="chip">Análisis de datos</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal" style="--c:#a78bfa">
+            <span class="tl-dot" aria-hidden="true"><svg class="ic"><use href="#i-building"/></svg></span>
+            <div class="card spot role">
+              <div class="role-top">
+                <span class="period"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Junio 2021 a diciembre 2023</span>
+                <span class="pill p-violet">Sector público</span>
+              </div>
+              <h3>Economista del Observatorio Económico y Social</h3>
+              <p class="role-org">Alcaldía de Filandia <span>· Filandia, Quindío</span></p>
+              <ul class="duties">
+                <li>Recolección, depuración y procesamiento de datos socioeconómicos con Python y R.</li>
+                <li>Indicadores y sistemas de seguimiento del Plan de Desarrollo Municipal.</li>
+                <li>Dashboards en Power BI para monitorear indicadores demográficos, sociales y económicos.</li>
+              </ul>
+              <div class="more" id="more-3" inert>
+                <div>
+                  <ul class="duties">
+                    <li>Integración de múltiples fuentes para analizar pobreza multidimensional, educación, empleo y actividad económica.</li>
+                    <li>Análisis descriptivo y exploratorio para identificar patrones y tendencias territoriales.</li>
+                    <li>Informes estadísticos y de análisis económico y social.</li>
+                  </ul>
+                </div>
+              </div>
+              <button class="more-btn" type="button" aria-expanded="false" aria-controls="more-3" data-more="3">Ver 3 funciones más<svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></button>
+              <div class="chips"><span class="chip">Python</span><span class="chip">R</span><span class="chip">Power BI</span><span class="chip">Indicadores</span><span class="chip">Pobreza multidimensional</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal" style="--c:#fbbf24">
+            <span class="tl-dot" aria-hidden="true"><svg class="ic"><use href="#i-flask"/></svg></span>
+            <div class="card spot role">
+              <div class="role-top">
+                <span class="period"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Noviembre 2022 a febrero 2023</span>
+                <span class="pill p-amber">Investigación aplicada</span>
+              </div>
+              <h3>Asistente de investigación</h3>
+              <p class="role-org">Universidad del Rosario <span>· Proyecto sobre adaptación al cambio climático en el sector rural del Quindío</span></p>
+              <ul class="duties">
+                <li>Procesamiento, limpieza y tabulación de bases de datos de encuestas rurales.</li>
+                <li>Trabajo de campo y recolección de información primaria.</li>
+                <li>Análisis estadísticos para caracterizar hogares y patrones de comportamiento.</li>
+              </ul>
+              <div class="more" id="more-4" inert>
+                <div>
+                  <ul class="duties">
+                    <li>Organización y documentación de la información para garantizar la calidad metodológica del estudio.</li>
+                  </ul>
+                </div>
+              </div>
+              <button class="more-btn" type="button" aria-expanded="false" aria-controls="more-4" data-more="1">Ver 1 función más<svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></button>
+              <div class="chips"><span class="chip">Encuestas</span><span class="chip">Trabajo de campo</span><span class="chip">Estadística</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal" style="--c:#e879f9">
+            <span class="tl-dot" aria-hidden="true"><svg class="ic"><use href="#i-users"/></svg></span>
+            <div class="card spot role">
+              <div class="role-top">
+                <span class="period"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Marzo 2021 a junio 2021</span>
+                <span class="pill p-fuchsia">Desarrollo local</span>
+              </div>
+              <h3>Gestor de emprendimientos</h3>
+              <p class="role-org">Alcaldía de Filandia <span>· Filandia, Quindío</span></p>
+              <ul class="duties">
+                <li>Levantamiento de datos de los emprendimientos del municipio.</li>
+                <li>Capacitación y formación a emprendedores.</li>
+                <li>Caracterización de necesidades y asesoría en proyectos y postulaciones.</li>
+              </ul>
+              <div class="chips"><span class="chip">Levantamiento de datos</span><span class="chip">Formación</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         Proyectos
+         ========================================================= -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Proyectos</p>
+          <h2>Del dato crudo a una aplicación que puedes probar</h2>
+          <p class="sec-lead">Dos sistemas completos: preparación de datos, entrenamiento, seguimiento de experimentos y despliegue en la web.</p>
+        </div>
+
+        <article class="card project reveal" style="--c:#38bdf8">
+          <div class="pv">
+            <div class="pv-label"><span>Pipeline del modelo</span><span>EfficientNetV2M</span></div>
+            <div class="pipe">
+              <div class="node"><span class="node-ic"><svg class="ic" aria-hidden="true"><use href="#i-image"/></svg></span><span><b>HAM10000</b><small>Imágenes dermatoscópicas de 7 tipos de lesión</small></span></div>
+              <div class="node"><span class="node-ic"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span><b>Aumento y balanceo</b><small>MixUp, CutMix y balanceo de clases</small></span></div>
+              <div class="node"><span class="node-ic"><svg class="ic" aria-hidden="true"><use href="#i-net"/></svg></span><span><b>Transfer learning</b><small>Fine-tuning profundo con AdamW y label smoothing</small></span></div>
+              <div class="node"><span class="node-ic"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><b>Evaluación en MLflow</b><small>ROC por clase, matrices de confusión y reportes</small></span></div>
+              <div class="node"><span class="node-ic"><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg></span><span><b>Hugging Face Spaces</b><small>Aplicación web pública</small></span></div>
+            </div>
+            <div class="gauges">
+              <div class="gauge" style="--gc:#38bdf8">
+                <svg viewBox="0 0 86 86" aria-hidden="true"><circle class="g-track" cx="43" cy="43" r="35" fill="none" stroke-width="7"/><circle class="g-val" cx="43" cy="43" r="35" fill="none" stroke-width="7" data-v="0.96" transform="rotate(-90 43 43)"/><text class="g-num" x="43" y="49" text-anchor="middle">0.96</text></svg>
+                <small>AUC promedio</small>
+              </div>
+              <div class="gauge" style="--gc:#34d399">
+                <svg viewBox="0 0 86 86" aria-hidden="true"><circle class="g-track" cx="43" cy="43" r="35" fill="none" stroke-width="7"/><circle class="g-val" cx="43" cy="43" r="35" fill="none" stroke-width="7" data-v="0.84" transform="rotate(-90 43 43)"/><text class="g-num" x="43" y="49" text-anchor="middle">0.84</text></svg>
+                <small>Exactitud</small>
+              </div>
+              <div class="gauge" style="--gc:#fbbf24">
+                <svg viewBox="0 0 86 86" aria-hidden="true"><circle class="g-track" cx="43" cy="43" r="35" fill="none" stroke-width="7"/><circle class="g-val" cx="43" cy="43" r="35" fill="none" stroke-width="7" data-v="0.79" transform="rotate(-90 43 43)"/><text class="g-num" x="43" y="49" text-anchor="middle">0.79</text></svg>
+                <small>Sensibilidad en melanoma</small>
+              </div>
+              <p class="sr-only">Resultados: AUC promedio 0.96, exactitud 0.84 y sensibilidad para melanoma 0.79.</p>
+            </div>
           </div>
-          <div class="mt-6 grid gap-3 sm:grid-cols-2">
-            <div class="tool-chip tool-python rounded-2xl p-4">Python</div>
-            <div class="tool-chip tool-r rounded-2xl p-4">R / RStudio</div>
-            <div class="tool-chip tool-powerbi rounded-2xl p-4">Power BI</div>
-            <div class="tool-chip tool-sql rounded-2xl p-4">SQL</div>
-            <div class="tool-chip tool-stata rounded-2xl p-4">Stata</div>
-            <div class="tool-chip tool-mlflow rounded-2xl p-4">MLflow</div>
+          <div class="pt">
+            <div><span class="pill p-sky"><svg class="ic" style="width:14px;height:14px" aria-hidden="true"><use href="#i-image"/></svg>Deep learning en imágenes médicas</span></div>
+            <h3>Clasificación de cáncer de piel</h3>
+            <p class="pt-desc">Sistema que clasifica lesiones de piel con una red EfficientNetV2M, usando transfer learning y fine-tuning profundo sobre el conjunto HAM10000.</p>
+            <ul class="checks">
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Entrenamiento con MixUp, CutMix, label smoothing, aumento de datos y balanceo de clases.</li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Experimentación controlada en MLflow con curvas ROC por clase y matrices de confusión.</li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Aplicación web pública para probar el modelo con imágenes propias.</li>
+            </ul>
+            <div class="chips"><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">MLflow</span><span class="chip">Hugging Face</span><span class="chip">Python</span></div>
+            <div class="pt-actions">
+              <a class="btn btn-primary" href="https://huggingface.co/spaces/JuanRaigoso/skin-cancer-classification-medical-v2" target="_blank" rel="noopener">Probar la aplicación<svg class="ic ic-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn-ghost" href="https://github.com/JuanRaigoso/skin-cancer-classification" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg>Ver código en GitHub</a>
+            </div>
           </div>
+          <!-- Captura opcional: sube assets/proyecto-cancer-piel.png y aparecerá aquí. Mientras no exista, no se muestra nada. -->
+          <figure class="shot"><img src="assets/proyecto-cancer-piel.png" alt="Captura de la aplicación de clasificación de cáncer de piel" onload="this.parentElement.classList.add('is-loaded')" onerror="this.parentElement.remove()"></figure>
         </article>
 
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6 xl:row-span-2">
-          <div class="flex items-center gap-3">
-            <div class="rounded-2xl bg-amber-400/10 p-3 text-amber-300"><i data-lucide="lightbulb" class="h-6 w-6"></i></div>
-            <h3 class="text-xl font-semibold text-white">Blandas</h3>
+        <article class="card project rev reveal" style="--c:#34d399">
+          <div class="pv">
+            <div class="pv-label"><span>Pipeline del modelo</span><span>MLP en PyTorch</span></div>
+            <div class="pipe">
+              <div class="node"><span class="node-ic"><svg class="ic" aria-hidden="true"><use href="#i-db"/></svg></span><span><b>Give Me Some Credit</b><small>Predicción de morosidad a dos años</small></span></div>
+              <div class="node"><span class="node-ic"><svg class="ic" aria-hidden="true"><use href="#i-filter"/></svg></span><span><b>Limpieza robusta</b><small>Imputación, winsorización y corrección de outliers</small></span></div>
+              <div class="node"><span class="node-ic"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg></span><span><b>Transformación</b><small>Logaritmos y estandarización</small></span></div>
+              <div class="node"><span class="node-ic"><svg class="ic" aria-hidden="true"><use href="#i-net"/></svg></span><span><b>Red neuronal multicapa</b><small>Dropout, weight decay, early stopping y Adam</small></span></div>
+              <div class="node"><span class="node-ic"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span><span><b>Umbral calibrado</b><small>Maximiza F1 con clases desbalanceadas</small></span></div>
+              <div class="node"><span class="node-ic"><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg></span><span><b>Streamlit</b><small>Aplicación web pública</small></span></div>
+            </div>
+            <div class="gauges">
+              <div class="gauge" style="--gc:#34d399">
+                <svg viewBox="0 0 86 86" aria-hidden="true"><circle class="g-track" cx="43" cy="43" r="35" fill="none" stroke-width="7"/><circle class="g-val" cx="43" cy="43" r="35" fill="none" stroke-width="7" data-v="0.862" transform="rotate(-90 43 43)"/><text class="g-num" x="43" y="49" text-anchor="middle">0.862</text></svg>
+                <small>AUC-ROC</small>
+              </div>
+              <div class="gauge" style="--gc:#38bdf8">
+                <svg viewBox="0 0 86 86" aria-hidden="true"><circle class="g-track" cx="43" cy="43" r="35" fill="none" stroke-width="7"/><circle class="g-val" cx="43" cy="43" r="35" fill="none" stroke-width="7" data-v="0.852" transform="rotate(-90 43 43)"/><text class="g-num" x="43" y="49" text-anchor="middle">0.852</text></svg>
+                <small>Exactitud</small>
+              </div>
+              <div class="gauge" style="--gc:#fbbf24">
+                <svg viewBox="0 0 86 86" aria-hidden="true"><circle class="g-track" cx="43" cy="43" r="35" fill="none" stroke-width="7"/><circle class="g-val" cx="43" cy="43" r="35" fill="none" stroke-width="7" data-v="0.435" transform="rotate(-90 43 43)"/><text class="g-num" x="43" y="49" text-anchor="middle">0.435</text></svg>
+                <small>F1-score</small>
+              </div>
+              <p class="sr-only">Resultados: AUC-ROC 0.862, exactitud 0.852 y F1-score 0.435.</p>
+            </div>
           </div>
-          <ul class="mt-6 space-y-3 text-sm text-slate-200">
-            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Pensamiento analítico</li>
-            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Pensamiento crítico</li>
-            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Trabajo en equipo</li>
-            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Autodidacta</li>
-            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Tolerancia al estrés</li>
-            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Buenas relaciones interpersonales</li>
-          </ul>
-        </article>
-
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6 md:col-span-2 xl:col-span-1">
-          <div class="flex items-center gap-3">
-            <div class="rounded-2xl bg-emerald-400/10 p-3 text-emerald-300"><i data-lucide="line-chart" class="h-6 w-6"></i></div>
-            <h3 class="text-xl font-semibold text-white">Técnicas</h3>
+          <div class="pt">
+            <div><span class="pill p-emerald"><svg class="ic" style="width:14px;height:14px" aria-hidden="true"><use href="#i-shield"/></svg>Machine learning para riesgo financiero</span></div>
+            <h3>Evaluación de riesgo crediticio</h3>
+            <p class="pt-desc">Sistema completo que estima la probabilidad de morosidad a dos años con una red neuronal multicapa entrenada en PyTorch.</p>
+            <ul class="checks">
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Ingeniería de datos con imputación, winsorización, corrección de outliers, logaritmos y estandarización.</li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Varias arquitecturas comparadas y cada experimento registrado en MLflow.</li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Umbral operativo calibrado para maximizar F1 en un conjunto desbalanceado.</li>
+            </ul>
+            <div class="chips"><span class="chip">PyTorch</span><span class="chip">Scikit-learn</span><span class="chip">MLflow</span><span class="chip">Streamlit</span><span class="chip">Pandas</span></div>
+            <div class="pt-actions">
+              <a class="btn btn-primary" href="https://credit-mlp-credito-juanraigoso.streamlit.app/" target="_blank" rel="noopener">Probar la aplicación<svg class="ic ic-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn-ghost" href="https://github.com/JuanRaigoso/credit-mlp" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg>Ver código en GitHub</a>
+            </div>
           </div>
-          <ul class="mt-6 space-y-3 text-sm text-slate-200">
-            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Econometría</li>
-            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Series de tiempo</li>
-            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Machine Learning</li>
-            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Deep Learning</li>
-            <li class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4">Análisis cuantitativo</li>
-          </ul>
-        </article>
-
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6 md:col-span-2 xl:col-span-1">
-          <div class="flex items-center gap-3">
-            <div class="rounded-2xl bg-sky-400/10 p-3 text-sky-300"><i data-lucide="badge-check" class="h-6 w-6"></i></div>
-            <h3 class="text-xl font-semibold text-white">Fortalezas</h3>
-          </div>
-          <p class="mt-6 text-sm leading-7 text-slate-200">
-            Construyo dashboards, automatizo reportes, entreno modelos y convierto resultados técnicos en historias claras para stakeholders.
-          </p>
+          <!-- Captura opcional: sube assets/proyecto-riesgo-credito.png y aparecerá aquí. -->
+          <figure class="shot"><img src="assets/proyecto-riesgo-credito.png" alt="Captura de la aplicación de evaluación de riesgo crediticio" onload="this.parentElement.classList.add('is-loaded')" onerror="this.parentElement.remove()"></figure>
         </article>
       </div>
     </section>
 
-    <section id="experiencia" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <div class="mb-10 max-w-3xl reveal">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Experiencia</p>
-        <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Experiencia profesional  </h2>
-        <p class="mt-4 text-brand-muted">Incluye experiencia actual, sector público, investigación y aplicación de modelos de machine learning.</p>
-      </div>
+    <!-- =========================================================
+         Publicaciones
+         ========================================================= -->
+    <section class="section" id="publicaciones">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Publicaciones</p>
+          <h2>Producción científica</h2>
+          <p class="sec-lead">Investigación sobre desigualdad, educación, salud y seguridad social, con métodos econométricos y de aprendizaje automático.</p>
+        </div>
 
-      <div class="relative timeline-line space-y-10 pl-10">
-        <article class="reveal relative rounded-3xl border border-white/10 bg-brand-panel p-6 card-hover">
-          <span class="absolute left-[-35px] top-8 flex h-6 w-6 items-center justify-center rounded-full border-4 border-brand-bg bg-emerald-400"></span>
-          <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-            <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Actualidad</p>
-              <h3 class="mt-2 text-2xl font-bold text-white">Economista | Analista de Datos · FENALCE</h3>
-              <p class="mt-2 text-sm text-brand-muted">Bogotá, D. C. · Mayo 2024 - Actual</p>
-            </div>
-            <div class="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm text-emerald-300">Sector agrícola</div>
-          </div>
-          <ul class="mt-6 space-y-3 text-sm leading-7 text-slate-200">
-            <li>• Análisis económico del sector agrícola y elaboración de informes técnicos basados en datos nacionales e internacionales.</li>
-            <li>• Construcción, actualización y automatización de dashboards en Power BI para seguimiento de indicadores productivos y de mercado.</li>
-            <li>• Desarrollo de modelos predictivos de series de tiempo aplicando machine learning para pronósticos de precios y producción.</li>
-            <li>• Formulación de proyectos estratégicos para la cadena de cereales y leguminosas.</li>
-            <li>• Generación de informes estadísticos para soporte a decisiones sectoriales.</li>
-            <li>• Automatización de tareas de procesamiento, actualización y análisis de datos mediante Python, optimizando tiempos de ejecución y reduciendo procesos manuales.</li>
-          </ul>
-        </article>
+        <div class="pubs">
+          <article class="card spot lift pub reveal">
+            <div class="pub-top"><span class="pill p-amber">Artículo</span><span class="pub-status"><span class="pulse" style="background:#fbbf24"></span>Aprobado para publicación</span></div>
+            <h3>Desigualdad de oportunidades en Colombia: estimación y análisis regional mediante modelos de aprendizaje automático</h3>
+            <p class="pub-venue">Revista Cuadernos de Economía</p>
+          </article>
 
-        <article class="reveal relative rounded-3xl border border-white/10 bg-brand-panel p-6 card-hover">
-          <span class="absolute left-[-35px] top-8 flex h-6 w-6 items-center justify-center rounded-full border-4 border-brand-bg bg-sky-400"></span>
-          <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-            <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">Gestión pública</p>
-              <h3 class="mt-2 text-2xl font-bold text-white">Profesional Observatorio Económico y Social · Alcaldía de Filandia</h3>
-              <p class="mt-2 text-sm text-brand-muted">Filandia, Quindío · Junio 2021 - Diciembre 2023</p>
+          <article class="card spot lift pub reveal" style="--d:.08s">
+            <span class="pub-year" aria-hidden="true">2025</span>
+            <div class="pub-top"><span class="pill p-sky">Artículo</span></div>
+            <h3>Análisis de los determinantes del rendimiento académico en matemáticas para los estudiantes de Quindío, Colombia, a partir de las pruebas Saber 11°</h3>
+            <p class="pub-venue">Revista de Investigación, Desarrollo e Innovación (RIDI), vol. 15, núm. 1, 2025</p>
+            <div class="pub-actions">
+              <a class="btn btn-ghost btn-sm" href="https://doi.org/10.19053/uptc.20278306.v15.n1.2025.19182" target="_blank" rel="noopener">Leer artículo<svg class="ic ic-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <button class="copy-btn" type="button" data-copy="10.19053/uptc.20278306.v15.n1.2025.19182" data-msg="DOI copiado"><svg class="ic ic-copy" aria-hidden="true"><use href="#i-copy"/></svg><svg class="ic ic-check" aria-hidden="true"><use href="#i-check"/></svg>Copiar DOI</button>
             </div>
-            <div class="rounded-2xl border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sm text-sky-300">Sector público</div>
-          </div>
-          <ul class="mt-6 space-y-3 text-sm leading-7 text-slate-200">
-            <li>• Recolección, depuración y procesamiento de datos socioeconómicos utilizando Python y R.</li>
-            <li>• Construcción de indicadores y sistemas de seguimiento del Plan de Desarrollo Municipal.</li>
-            <li>• Elaboración de informes estadísticos y análisis económico-social.</li>
-            <li>• Desarrollo de dashboards en Power BI para monitoreo demográfico, social y económico.</li>
-            <li>• Integración de múltiples fuentes para análisis de pobreza multidimensional, educación, empleo y actividad económica.</li>
-          </ul>
-        </article>
+          </article>
 
-        <article class="reveal relative rounded-3xl border border-white/10 bg-brand-panel p-6 card-hover">
-          <span class="absolute left-[-35px] top-8 flex h-6 w-6 items-center justify-center rounded-full border-4 border-brand-bg bg-amber-400"></span>
-          <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-            <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-300">Investigación aplicada</p>
-              <h3 class="mt-2 text-2xl font-bold text-white">Contratista Profesional · Asistente de Investigación</h3>
-              <p class="mt-2 text-sm text-brand-muted">Universidad del Rosario · Quindío · Noviembre 2022 - Febrero 2023</p>
+          <article class="card spot lift pub reveal">
+            <span class="pub-year" aria-hidden="true">2025</span>
+            <div class="pub-top"><span class="pill p-violet">Repositorio institucional</span></div>
+            <h3>Identificación de la actividad de la toxoplasmosis ocular mediante distintas redes neuronales convolucionales</h3>
+            <p class="pub-venue">Vitela, repositorio institucional de la Pontificia Universidad Javeriana, 2025</p>
+            <div class="pub-actions">
+              <a class="btn btn-ghost btn-sm" href="https://vitela.javerianacali.edu.co/items/046358c2-2057-4f05-9007-d7d16fe04ba0" target="_blank" rel="noopener">Ver en Vitela<svg class="ic ic-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             </div>
-            <div class="rounded-2xl border border-amber-400/20 bg-amber-400/10 px-4 py-2 text-sm text-amber-300">Academia</div>
-          </div>
-          <ul class="mt-6 space-y-3 text-sm leading-7 text-slate-200">
-            <li>• Proyecto sobre disposición a tomar medidas de adaptación frente al cambio climático en el sector rural.</li>
-            <li>• Procesamiento, limpieza y tabulación de bases de datos provenientes de encuestas rurales.</li>
-            <li>• Acompañamiento en trabajo de campo y recolección de información primaria.</li>
-            <li>• Implementación de análisis estadísticos para caracterización de hogares y patrones de comportamiento.</li>
-            <li>• Organización y documentación metodológica de la información del estudio.</li>
-          </ul>
-        </article>
+          </article>
 
-        <article class="reveal relative rounded-3xl border border-white/10 bg-brand-panel p-6 card-hover">
-          <span class="absolute left-[-35px] top-8 flex h-6 w-6 items-center justify-center rounded-full border-4 border-brand-bg bg-fuchsia-400"></span>
-          <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-            <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-fuchsia-300">Desarrollo local</p>
-              <h3 class="mt-2 text-2xl font-bold text-white">Contratista Profesional · Gestor de Emprendimientos</h3>
-              <p class="mt-2 text-sm text-brand-muted">Alcaldía de Filandia · Filandia, Quindío · Marzo 2021 - Junio 2021</p>
+          <article class="card spot lift pub reveal" style="--d:.08s">
+            <span class="pub-year" aria-hidden="true">2022</span>
+            <div class="pub-top"><span class="pill p-emerald">Artículo</span></div>
+            <h3>Participación de la población rural del municipio de Filandia en los sistemas de seguridad social</h3>
+            <p class="pub-venue">Revista Lasallista de Investigación, vol. 19, núm. 1, 2022</p>
+            <div class="pub-actions">
+              <a class="btn btn-ghost btn-sm" href="https://doi.org/10.22507/rli.v19n1a14" target="_blank" rel="noopener">Leer artículo<svg class="ic ic-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <button class="copy-btn" type="button" data-copy="10.22507/rli.v19n1a14" data-msg="DOI copiado"><svg class="ic ic-copy" aria-hidden="true"><use href="#i-copy"/></svg><svg class="ic ic-check" aria-hidden="true"><use href="#i-check"/></svg>Copiar DOI</button>
             </div>
-            <div class="rounded-2xl border border-fuchsia-400/20 bg-fuchsia-400/10 px-4 py-2 text-sm text-fuchsia-300">Emprendimiento</div>
-          </div>
-          <ul class="mt-6 space-y-3 text-sm leading-7 text-slate-200">
-            <li>• Levantamiento de datos de los emprendimientos del municipio.</li>
-            <li>• Capacitación y formación a emprendedores.</li>
-            <li>• Caracterización de necesidades y oportunidades.</li>
-            <li>• Asesoría en proyectos y postulaciones.</li>
-          </ul>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="proyectos" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <div class="mb-10 max-w-3xl reveal">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Proyectos</p>
-        <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Showcase técnico</h2>
-      </div>
+    <!-- =========================================================
+         Habilidades
+         ========================================================= -->
+    <section class="section" id="habilidades">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Habilidades</p>
+          <h2>Caja de herramientas</h2>
+          <p class="sec-lead">Lo que uso a diario para pasar de una pregunta económica a un modelo, un tablero o un informe.</p>
+        </div>
 
-      <div class="grid gap-6 lg:grid-cols-2">
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-7">
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <span class="rounded-full border border-sky-400/20 bg-sky-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-sky-300">Deep Learning</span>
-              <h3 class="mt-4 text-2xl font-bold text-white">Clasificación de Cáncer de Piel</h3>
+        <div class="skills">
+          <article class="card spot sk sk-a reveal">
+            <div class="sk-head"><span class="tile-ic t-sky"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg></span><h3 class="card-title">Lenguajes, datos y visualización</h3></div>
+            <div class="tools">
+              <div class="tool" style="--tc:#3b82f6"><i></i>Python</div>
+              <div class="tool" style="--tc:#60a5fa"><i></i>R y RStudio</div>
+              <div class="tool" style="--tc:#2dd4bf"><i></i>SQL</div>
+              <div class="tool" style="--tc:#facc15"><i></i>Power BI</div>
+              <div class="tool" style="--tc:#14b8a6"><i></i>Stata</div>
+              <div class="tool" style="--tc:#818cf8"><i></i>Power Automate</div>
             </div>
-            <div class="rounded-2xl bg-sky-400/10 p-3 text-sky-300">
-              <i data-lucide="activity" class="h-6 w-6"></i>
-            </div>
-          </div>
-          <p class="mt-5 text-sm leading-7 text-slate-200">Sistema de clasificación de cáncer de piel basado en EfficientNetV2M con transfer learning y fine-tuning profundo. Incluye MixUp, CutMix, Label Smoothing, data augmentation y balanceo de clases.</p>
-          <div class="mt-6 grid gap-3 sm:grid-cols-3">
-            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">AUC</p><p class="mt-2 text-xl font-bold text-white">0.96</p></div>
-            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">Precisión</p><p class="mt-2 text-xl font-bold text-white">0.84</p></div>
-            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">Sensibilidad</p><p class="mt-2 text-xl font-bold text-white">0.79</p></div>
-          </div>
-          <div class="mt-6 flex flex-wrap gap-3 text-xs text-brand-muted">
-            <span class="rounded-full border border-white/10 px-3 py-2">TensorFlow</span>
-            <span class="rounded-full border border-white/10 px-3 py-2">Keras</span>
-            <span class="rounded-full border border-white/10 px-3 py-2">MLflow</span>
-            <span class="rounded-full border border-white/10 px-3 py-2">Streamlit</span>
-          </div>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="https://github.com/JuanRaigoso/skin-cancer-classification" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-line bg-brand-bgSoft px-5 py-3 text-sm font-semibold text-white transition hover:border-sky-400/60"><i data-lucide="github" class="h-4 w-4"></i> GitHub</a>
-            <a href="https://huggingface.co/spaces/JuanRaigoso/skin-cancer-classification-medical-v2" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 to-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95"><i data-lucide="external-link" class="h-4 w-4"></i> Demo / App</a>
-          </div>
-        </article>
+          </article>
 
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-7">
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <span class="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300">FinTech / ML</span>
-              <h3 class="mt-4 text-2xl font-bold text-white">Evaluación de Riesgo Crediticio</h3>
+          <article class="card spot sk sk-c reveal" style="--d:.08s">
+            <div class="sk-head"><span class="tile-ic t-violet"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><h3 class="card-title">Librerías y despliegue</h3></div>
+            <div class="chips lib-chips">
+              <span class="chip">Pandas</span><span class="chip">Scikit-learn</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span>
+              <span class="chip">Keras</span><span class="chip">MLflow</span><span class="chip">Streamlit</span><span class="chip">Hugging Face</span>
             </div>
-            <div class="rounded-2xl bg-emerald-400/10 p-3 text-emerald-300">
-              <i data-lucide="shield-check" class="h-6 w-6"></i>
+          </article>
+
+          <article class="card spot sk sk-b reveal">
+            <div class="sk-head"><span class="tile-ic t-emerald"><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg></span><h3 class="card-title">Modelamiento y análisis cuantitativo</h3></div>
+            <ul class="methods">
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><div><b>Econometría</b><span>Modelos econométricos y análisis de determinantes</span></div></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><div><b>Series de tiempo</b><span>Pronósticos de precios y producción</span></div></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><div><b>Machine learning</b><span>Clasificación, regresión, agrupamiento y PCA</span></div></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><div><b>Deep learning</b><span>Redes convolucionales y recurrentes</span></div></li>
+            </ul>
+          </article>
+
+          <article class="card spot sk sk-d reveal" style="--d:.08s">
+            <div class="sk-head"><span class="tile-ic t-amber"><svg class="ic" aria-hidden="true"><use href="#i-brain"/></svg></span><h3 class="card-title">Habilidades blandas</h3></div>
+            <div class="soft-grid">
+              <div class="soft-item"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Pensamiento analítico</div>
+              <div class="soft-item"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Pensamiento crítico</div>
+              <div class="soft-item"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Aprendizaje autodidacta</div>
+              <div class="soft-item"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Trabajo en equipo</div>
+              <div class="soft-item"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Tolerancia al estrés</div>
+              <div class="soft-item"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Relaciones interpersonales</div>
             </div>
-          </div>
-          <p class="mt-5 text-sm leading-7 text-slate-200">Sistema de predicción de morosidad a 2 años con MLP en PyTorch, ingeniería de datos robusta, tratamiento de outliers, transformaciones y trazabilidad experimental con MLflow.</p>
-          <div class="mt-6 grid gap-3 sm:grid-cols-3">
-            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">AUC-ROC</p><p class="mt-2 text-xl font-bold text-white">0.862</p></div>
-            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">Accuracy</p><p class="mt-2 text-xl font-bold text-white">0.852</p></div>
-            <div class="rounded-2xl border border-white/10 bg-brand-bgSoft/60 p-4"><p class="text-xs uppercase tracking-[0.2em] text-brand-muted">F1-score</p><p class="mt-2 text-xl font-bold text-white">0.435</p></div>
-          </div>
-          <div class="mt-6 flex flex-wrap gap-3 text-xs text-brand-muted">
-            <span class="rounded-full border border-white/10 px-3 py-2">PyTorch</span>
-            <span class="rounded-full border border-white/10 px-3 py-2">MLflow</span>
-            <span class="rounded-full border border-white/10 px-3 py-2">Scikit-Learn</span>
-            <span class="rounded-full border border-white/10 px-3 py-2">Streamlit</span>
-          </div>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="https://github.com/JuanRaigoso/credit-mlp" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-line bg-brand-bgSoft px-5 py-3 text-sm font-semibold text-white transition hover:border-emerald-400/60"><i data-lucide="github" class="h-4 w-4"></i> GitHub</a>
-            <a href="https://credit-mlp-credito-juanraigoso.streamlit.app/" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 to-sky-500 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95"><i data-lucide="external-link" class="h-4 w-4"></i> Demo / App</a>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="publicaciones" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <div class="mb-10 max-w-3xl reveal">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Publicaciones</p>
-        <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Producción científica</h2>
-      </div>
+    <!-- =========================================================
+         Certificaciones
+         ========================================================= -->
+    <section class="section" id="certificaciones">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Certificaciones</p>
+          <h2>Formación complementaria</h2>
+          <p class="sec-lead">Actualización continua en ciencia de datos, analítica y medición de la pobreza.</p>
+        </div>
 
-      <div class="space-y-4">
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6"><h3 class="text-lg font-semibold text-white">Análisis de los determinantes del rendimiento académico en matemáticas para los estudiantes de Quindío, Colombia, a partir de las pruebas Saber 11°</h3><p class="mt-2 text-sm text-brand-muted">Revista de Investigación, Desarrollo e Innovación (RIDI) · Vol. 15, No. 1 · 2025</p><a class="mt-3 inline-flex text-sm text-sky-300 hover:text-sky-200" href="https://doi.org/10.19053/uptc.20278306.v15.n1.2025.19182" target="_blank" rel="noreferrer">DOI: 10.19053/uptc.20278306.v15.n1.2025.19182</a></article>
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6"><h3 class="text-lg font-semibold text-white">Identificación de la actividad de la toxoplasmosis ocular mediante distintas redes neuronales convolucionales</h3><p class="mt-2 text-sm text-brand-muted">Vitela · Repositorio institucional de la Pontificia Universidad Javeriana · 2025</p><a class="mt-3 inline-flex text-sm text-sky-300 hover:text-sky-200" href="https://vitela.javerianacali.edu.co/items/046358c2-2057-4f05-9007-d7d16fe04ba0" target="_blank" rel="noreferrer">Ver publicación</a></article>
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6"><h3 class="text-lg font-semibold text-white">Participación de la Población Rural del Municipio de Filandia en los Sistemas de Seguridad Social</h3><p class="mt-2 text-sm text-brand-muted">Revista Lasallista de Investigación · Vol. 19, No. 1 · 2022</p><a class="mt-3 inline-flex text-sm text-sky-300 hover:text-sky-200" href="https://doi.org/10.22507/rli.v19n1a14" target="_blank" rel="noreferrer">DOI: 10.22507/rli.v19n1a14</a></article>
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6"><h3 class="text-lg font-semibold text-white">Desigualdad de oportunidades en Colombia: estimación y análisis regional mediante modelos de aprendizaje automático</h3><p class="mt-2 text-sm text-brand-muted">Revista Cuadernos de Economía · En espera de publicación</p><span class="mt-3 inline-flex text-sm text-slate-400">Estado: pendiente de publicación</span></article>
+        <div class="certs">
+          <article class="card spot cert feat reveal">
+            <div class="cert-top">
+              <span class="tile-ic t-sky"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span>
+              <span class="pill p-sky">Más reciente</span>
+            </div>
+            <h3>GCI World: Data Science</h3>
+            <p class="cert-quote">Fundamental theories and implementations of Data Science</p>
+            <p>The University of Tokyo, Matsuo-Iwasawa Laboratory, Graduate School of Engineering</p>
+            <div class="cert-when"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Abril 2026</div>
+          </article>
+          <article class="card spot lift cert reveal" style="--d:.08s">
+            <div class="cert-top"><span class="tile-ic t-emerald"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><span class="pill p-emerald">90 horas</span></div>
+            <h3>Fundamentos en analítica de datos</h3>
+            <p>Correlation One (DS4A) y Ministerio TIC</p>
+            <div class="cert-when"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Noviembre a diciembre 2022</div>
+          </article>
+          <article class="card spot lift cert reveal">
+            <div class="cert-top"><span class="tile-ic t-violet"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span></div>
+            <h3>Diplomado en Ciencia de Datos</h3>
+            <p>Escuela Superior de Administración Pública (ESAP)</p>
+            <div class="cert-when"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Agosto a octubre 2022</div>
+          </article>
+          <article class="card spot lift cert reveal" style="--d:.08s">
+            <div class="cert-top"><span class="tile-ic t-amber"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><span class="pill p-amber">300 horas</span></div>
+            <h3>Bootcamp Data Science: Machine Learning con Python</h3>
+            <p>Bogotá Institute of Technology (BIT) y Corporación Universitaria Iberoamericana</p>
+            <div class="cert-when"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Marzo a junio 2022</div>
+          </article>
+          <article class="card spot lift cert reveal" style="--d:.16s">
+            <div class="cert-top"><span class="tile-ic t-fuchsia"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><span class="pill p-fuchsia">120 horas</span></div>
+            <h3>Diseñando un índice de pobreza multidimensional</h3>
+            <p>PNUD e Iniciativa de Oxford sobre la Pobreza y el Desarrollo Humano (OPHI)</p>
+            <div class="cert-when"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Abril 2021</div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="certificaciones" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <div class="mb-10 max-w-3xl reveal">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Certificaciones</p>
-        <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl">Formación complementaria</h2>
-        <p class="mt-4 text-brand-muted">Agregué una sección específica para reforzar tu perfil técnico y de actualización continua.</p>
-      </div>
-      <div class="grid gap-6 md:grid-cols-2">
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6">
-          <div class="flex items-center gap-3"><div class="rounded-2xl bg-emerald-400/10 p-3 text-emerald-300"><i data-lucide="award" class="h-6 w-6"></i></div><h3 class="text-lg font-semibold text-white">Fundamentos en analítica de datos</h3></div>
-          <p class="mt-4 text-sm leading-7 text-slate-200">Correlation One - DS4A · MinTIC</p>
-          <p class="text-sm text-brand-muted">90 horas · Noviembre 2022 - Diciembre 2022</p>
-        </article>
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6">
-          <div class="flex items-center gap-3"><div class="rounded-2xl bg-sky-400/10 p-3 text-sky-300"><i data-lucide="award" class="h-6 w-6"></i></div><h3 class="text-lg font-semibold text-white">Diplomado en Ciencia de Datos</h3></div>
-          <p class="mt-4 text-sm leading-7 text-slate-200">Escuela Superior de Administración Pública - ESAP</p>
-          <p class="text-sm text-brand-muted">Agosto 2022 - Octubre 2022</p>
-        </article>
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6">
-          <div class="flex items-center gap-3"><div class="rounded-2xl bg-amber-400/10 p-3 text-amber-300"><i data-lucide="award" class="h-6 w-6"></i></div><h3 class="text-lg font-semibold text-white">Bootcamp Data Science: Machine Learning con Python</h3></div>
-          <p class="mt-4 text-sm leading-7 text-slate-200">BIT · Corporación Universitaria Iberoamericana</p>
-          <p class="text-sm text-brand-muted">300 horas · Marzo 2022 - Junio 2022</p>
-        </article>
-        <article class="reveal card-hover rounded-3xl border border-white/10 bg-brand-panel p-6">
-          <div class="flex items-center gap-3"><div class="rounded-2xl bg-fuchsia-400/10 p-3 text-fuchsia-300"><i data-lucide="award" class="h-6 w-6"></i></div><h3 class="text-lg font-semibold text-white">Diseñando un índice de pobreza multidimensional</h3></div>
-          <p class="mt-4 text-sm leading-7 text-slate-200">PNUD · OPHI</p>
-          <p class="text-sm text-brand-muted">120 horas · Abril 2021</p>
-        </article>
+    <!-- =========================================================
+         Contacto
+         ========================================================= -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="cta-grid">
+            <div>
+              <p class="eyebrow">Contacto</p>
+              <h2>Construyamos algo con datos</h2>
+              <p class="cta-lead">Si tienes una vacante, una consultoría o una investigación donde los datos puedan marcar la diferencia, escríbeme.</p>
+              <div class="mail-row">
+                <a href="mailto:jraigosoespinosa@gmail.com">jraigosoespinosa@gmail.com</a>
+                <button class="copy-btn" type="button" data-copy="jraigosoespinosa@gmail.com" data-msg="Correo copiado"><svg class="ic ic-copy" aria-hidden="true"><use href="#i-copy"/></svg><svg class="ic ic-check" aria-hidden="true"><use href="#i-check"/></svg>Copiar</button>
+              </div>
+              <div class="cta-actions">
+                <a class="btn btn-primary" href="mailto:jraigosoespinosa@gmail.com"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Enviar correo</a>
+                <a class="btn btn-ghost" href="https://www.linkedin.com/in/juan-david-r-900824168/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg>LinkedIn</a>
+                <a class="btn btn-ghost" href="https://github.com/JuanRaigoso" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg>GitHub</a>
+                <a class="btn btn-ghost" href="assets/HV-%20Juan%20D.%20Raigoso.pdf" download="HV-Juan-David-Raigoso.pdf"><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>Hoja de vida</a>
+              </div>
+            </div>
+            <aside class="avail">
+              <h3>Disponible para</h3>
+              <ul>
+                <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Roles en analítica, ciencia de datos y economía cuantitativa</li>
+                <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Consultoría en pronósticos, tableros y automatización</li>
+                <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Investigación aplicada y evaluación de política pública</li>
+                <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Docencia y formación en estadística y análisis de datos</li>
+              </ul>
+              <div class="avail-loc"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Quindío, Colombia, con disponibilidad para viajar.</div>
+            </aside>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer id="contacto" class="border-t border-white/10 bg-brand-bgSoft/60">
-    <div class="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
-      <div class="reveal">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Contacto</p>
-        <h2 class="mt-3 text-3xl font-bold text-white">Construyamos algo con datos</h2>
-        <p class="mt-4 max-w-2xl text-brand-muted">Disponible para roles, consultoría, investigación aplicada y proyectos de analítica, economía cuantitativa, machine learning y visualización.</p>
-      </div>
-
-      <div class="grid gap-4 sm:grid-cols-2 reveal">
-        <a href="https://www.linkedin.com/in/juan-david-r-900824168/" target="_blank" rel="noreferrer" class="card-hover rounded-2xl border border-white/10 bg-brand-panel p-4"><div class="flex items-center gap-3 text-white"><i data-lucide="linkedin" class="h-5 w-5 text-sky-400"></i><span>LinkedIn</span></div></a>
-        <a href="https://github.com/JuanRaigoso" target="_blank" rel="noreferrer" class="card-hover rounded-2xl border border-white/10 bg-brand-panel p-4"><div class="flex items-center gap-3 text-white"><i data-lucide="github" class="h-5 w-5 text-sky-400"></i><span>GitHub</span></div></a>
-        <a href="mailto:jraigosoespinosa@gmail.com" class="card-hover rounded-2xl border border-white/10 bg-brand-panel p-4"><div class="flex items-center gap-3 text-white"><i data-lucide="mail" class="h-5 w-5 text-sky-400"></i><span>Email</span></div></a>
-        <div class="rounded-2xl border border-white/10 bg-brand-panel p-4"><div class="flex items-center gap-3 text-white"><i data-lucide="map-pin" class="h-5 w-5 text-sky-400"></i><span>Quindío, Colombia</span></div></div>
-      </div>
+  <footer class="footer">
+    <div class="container foot">
+      <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">JDR</span><span class="brand-name">Juan David Raigoso<small>© <span id="year">2026</span>. Hecho a mano con HTML, CSS y JavaScript.</small></span></a>
+      <nav aria-label="Pie de página">
+        <a href="#trayectoria">Trayectoria</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#publicaciones">Publicaciones</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
-
-    <div class="border-t border-white/5 px-6 py-5 text-center text-sm text-slate-500">© <span id="year"></span> Juan David Raigoso. Hecho con HTML, Tailwind CSS y Lucide Icons.</div>
   </footer>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <button class="to-top" type="button" aria-label="Volver arriba"><svg class="ic" aria-hidden="true"><use href="#i-up"/></svg></button>
+  <div class="toast" role="status" aria-live="polite"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span></span></div>
+
   <script>
-    lucide.createIcons();
-    document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    'use strict';
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+    $('#year').textContent = new Date().getFullYear();
+
+    // Años trabajando con datos (desde marzo de 2021)
+    const yearsEl = $('#kpi-years');
+    if (yearsEl) yearsEl.dataset.to = Math.floor((Date.now() - new Date(2021, 2, 1)) / (365.25 * 864e5));
+
+    /* ---------- Encabezado, progreso, volver arriba y línea de tiempo ---------- */
+    const header = $('#header');
+    const toTop = $('.to-top');
+    const timeline = $('.timeline');
+    const tlItems = $$('.tl-item');
+    let ticking = false;
+    function onScroll() {
+      const y = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      header.classList.toggle('scrolled', y > 24);
+      header.style.setProperty('--sp', max > 0 ? (y / max).toFixed(4) : 0);
+      toTop.classList.toggle('show', y > 900);
+      if (timeline) {
+        const vh = window.innerHeight;
+        const r = timeline.getBoundingClientRect();
+        const p = Math.min(1, Math.max(0, (vh * 0.55 - r.top) / r.height));
+        timeline.style.setProperty('--p', p.toFixed(4));
+        tlItems.forEach((it) => it.classList.toggle('lit', it.getBoundingClientRect().top + 40 < vh * 0.55));
+      }
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+    onScroll();
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }));
+
+    /* ---------- Menú móvil ---------- */
+    const menuBtn = $('.menu-btn');
+    const mobileMenu = $('#mobile-menu');
+    function setMenu(open) {
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      mobileMenu.classList.toggle('open', open);
+      if (open) header.classList.add('scrolled'); else onScroll();
+    }
+    menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+    $$('a', mobileMenu).forEach((a) => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+
+    /* ---------- Sección activa en el menú ---------- */
+    const navLinks = $$('.nav-links a, .mobile-menu a[href^="#"]');
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const id = '#' + e.target.id;
+        navLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === id));
       });
-    }, { threshold: 0.12 });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    $$('main > section[id]').forEach((s) => spy.observe(s));
 
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    /* ---------- Aparición al hacer scroll, contadores y medidores ---------- */
+    function countUp(el) {
+      const to = parseFloat(el.dataset.to) || 0;
+      if (reduce) { el.textContent = to; return; }
+      const t0 = performance.now(), dur = 1400;
+      (function step(t) {
+        const k = Math.min(1, (t - t0) / dur);
+        el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3)));
+        if (k < 1) requestAnimationFrame(step);
+      })(t0);
+    }
+    const C = 2 * Math.PI * 35;
+    $$('.g-val').forEach((c) => { c.style.strokeDasharray = C; c.style.strokeDashoffset = reduce ? C * (1 - parseFloat(c.dataset.v)) : C; });
+
+    const revealer = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        el.classList.add('in');
+        $$('.count', el).forEach(countUp);
+        $$('.g-val', el).forEach((c) => { c.style.strokeDashoffset = C * (1 - parseFloat(c.dataset.v)); });
+        revealer.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    $$('.reveal').forEach((el) => revealer.observe(el));
+
+    /* ---------- Luz que sigue al cursor en las tarjetas ---------- */
+    document.addEventListener('pointermove', (e) => {
+      const card = e.target.closest && e.target.closest('.spot');
+      if (!card) return;
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }, { passive: true });
+
+    /* ---------- Palabra que rota en la portada ---------- */
+    const rot = $('.rot');
+    const words = ['pronósticos', 'tableros de decisión', 'modelos predictivos', 'evidencia para política pública'];
+    if (rot && !reduce) {
+      let i = 0;
+      setInterval(() => {
+        rot.classList.add('out');
+        setTimeout(() => {
+          i = (i + 1) % words.length;
+          rot.textContent = words[i];
+          rot.classList.remove('out');
+          rot.classList.add('pre');
+          requestAnimationFrame(() => requestAnimationFrame(() => rot.classList.remove('pre')));
+        }, 360);
+      }, 2800);
+    }
+
+    /* ---------- Ver más funciones ---------- */
+    $$('.more-btn').forEach((btn) => {
+      const panel = document.getElementById(btn.getAttribute('aria-controls'));
+      const n = btn.dataset.more;
+      const label = 'Ver ' + n + (n === '1' ? ' función más' : ' funciones más');
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', String(open));
+        panel.classList.toggle('open', open);
+        if (open) panel.removeAttribute('inert'); else panel.setAttribute('inert', '');
+        btn.firstChild.textContent = open ? 'Ver menos' : label;
+      });
+    });
+
+    /* ---------- Copiar al portapapeles ---------- */
+    const toast = $('.toast');
+    let toastTimer;
+    function showToast(msg) {
+      $('span', toast).textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+    async function copyText(t) {
+      try { await navigator.clipboard.writeText(t); return true; }
+      catch (err) {
+        const ta = document.createElement('textarea');
+        ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        let ok = false; try { ok = document.execCommand('copy'); } catch (_) {}
+        ta.remove(); return ok;
+      }
+    }
+    $$('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
+      const ok = await copyText(b.dataset.copy);
+      showToast(ok ? (b.dataset.msg || 'Copiado') : 'No se pudo copiar');
+      if (ok) { b.classList.add('done'); setTimeout(() => b.classList.remove('done'), 1800); }
+    }));
+
+    /* =========================================================
+       Tablero de trayectoria
+       Para actualizarlo, edita DATA: cada año con sus hitos y su
+       categoría (exp = experiencia, edu = formación, pub = publicación).
+       Acumulados, KPIs de la gráfica y pronóstico se recalculan solos.
+       ========================================================= */
+    const dash = $('#dash');
+    if (!dash) return;
+    const chartEl = $('.chart', dash);
+    const detail = $('.detail', dash);
+    const detailInner = $('.detail-inner', dash);
+    detailInner.addEventListener('scroll', () => {
+      detail.classList.toggle('scrolly', detailInner.scrollTop + detailInner.clientHeight < detailInner.scrollHeight - 4);
+    }, { passive: true });
+    const segBtns = $$('.seg button', dash);
+
+    const CATS = {
+      exp: { name: 'Experiencia', color: '#34d399' },
+      edu: { name: 'Formación', color: '#38bdf8' },
+      pub: { name: 'Publicaciones', color: '#fbbf24' }
+    };
+    const ORDER = ['exp', 'edu', 'pub'];
+    const DATA = [
+      { year: 2020, items: [['edu', 'Grado como economista, Universidad del Quindío']] },
+      { year: 2021, items: [['exp', 'Gestor de emprendimientos, Alcaldía de Filandia'], ['edu', 'Curso PNUD y OPHI sobre pobreza multidimensional'], ['exp', 'Economista del Observatorio Económico y Social de Filandia']] },
+      { year: 2022, items: [['edu', 'Bootcamp de machine learning con Python (BIT e Ibero)'], ['pub', 'Artículo en la Revista Lasallista de Investigación'], ['edu', 'Diplomado en Ciencia de Datos (ESAP)'], ['exp', 'Asistente de investigación, Universidad del Rosario'], ['edu', 'Fundamentos en analítica de datos (DS4A y MinTIC)']] },
+      { year: 2023, items: [['edu', 'Inicio de la maestría en Ciencia de Datos, Javeriana']] },
+      { year: 2024, items: [['exp', 'Economista y analista de datos en FENALCE']] },
+      { year: 2025, items: [['edu', 'Grado de magíster en Ciencia de Datos'], ['pub', 'Artículo en la revista RIDI'], ['pub', 'Investigación en Vitela sobre toxoplasmosis ocular']] },
+      { year: 2026, items: [['edu', 'GCI World Data Science, Universidad de Tokio'], ['exp', 'Docente en la Universidad La Gran Colombia']] }
+    ];
+
+    const acc = { exp: 0, edu: 0, pub: 0 };
+    DATA.forEach((d) => {
+      d.count = { exp: 0, edu: 0, pub: 0 };
+      d.items.forEach(([c]) => { d.count[c]++; });
+      ORDER.forEach((c) => { acc[c] += d.count[c]; });
+      d.cum = { exp: acc.exp, edu: acc.edu, pub: acc.pub };
+      d.n = d.items.length;
+      d.total = acc.exp + acc.edu + acc.pub;
+    });
+
+    // Mínimos cuadrados ordinarios sobre el total acumulado
+    const n = DATA.length;
+    const mx = DATA.reduce((s, d) => s + d.year, 0) / n;
+    const my = DATA.reduce((s, d) => s + d.total, 0) / n;
+    let sxx = 0, sxy = 0, ssr = 0;
+    DATA.forEach((d) => { sxx += (d.year - mx) ** 2; sxy += (d.year - mx) * (d.total - my); });
+    const b1 = sxy / sxx, b0 = my - b1 * mx;
+    DATA.forEach((d) => { ssr += (d.total - (b0 + b1 * d.year)) ** 2; });
+    const se = Math.sqrt(ssr / (n - 2));
+    const T = { 3: 3.182, 4: 2.776, 5: 2.571, 6: 2.447, 7: 2.365, 8: 2.306, 9: 2.262, 10: 2.228, 11: 2.201, 12: 2.179 }[n - 2] || 2.1;
+    const LAST = DATA[n - 1];
+    const FC = [1, 2].map((k) => {
+      const y = LAST.year + k, v = b0 + b1 * y;
+      const h = T * se * Math.sqrt(1 + 1 / n + (y - mx) ** 2 / sxx);
+      return { year: y, v, lo: Math.max(LAST.total, v - h), hi: v + h, forecast: true };
+    });
+    const THIS_YEAR = new Date().getFullYear();
+
+    let mode = 'acum';
+    let pinned = LAST.year;
+    let current = null;
+    let played = reduce;   // la cruz de selección se muestra cuando termina la intro
+    let started = reduce;  // la gráfica ya entró en pantalla
+    let refs = {};
+    let lastW = 0;
+    let uid = 0;
+
+    const NS = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs, parent) {
+      const node = document.createElementNS(NS, tag);
+      for (const k in attrs) node.setAttribute(k, attrs[k]);
+      if (parent) parent.appendChild(node);
+      return node;
+    }
+    const f = (p) => p[0].toFixed(1) + ',' + p[1].toFixed(1);
+
+    // Curva monótona (no inventa picos entre puntos)
+    function monoSegs(pts) {
+      const m = pts.length, dx = [], d = [], t = new Array(m);
+      for (let i = 0; i < m - 1; i++) { dx[i] = pts[i + 1][0] - pts[i][0]; d[i] = (pts[i + 1][1] - pts[i][1]) / dx[i]; }
+      t[0] = d[0]; t[m - 1] = d[m - 2];
+      for (let i = 1; i < m - 1; i++) t[i] = d[i - 1] * d[i] <= 0 ? 0 : (d[i - 1] + d[i]) / 2;
+      for (let i = 0; i < m - 1; i++) {
+        if (d[i] === 0) { t[i] = 0; t[i + 1] = 0; continue; }
+        const a = t[i] / d[i], b = t[i + 1] / d[i], s = a * a + b * b;
+        if (s > 9) { const k = 3 / Math.sqrt(s); t[i] = k * a * d[i]; t[i + 1] = k * b * d[i]; }
+      }
+      const segs = [];
+      for (let i = 0; i < m - 1; i++) {
+        const h = dx[i] / 3;
+        segs.push([pts[i], [pts[i][0] + h, pts[i][1] + t[i] * h], [pts[i + 1][0] - h, pts[i + 1][1] - t[i + 1] * h], pts[i + 1]]);
+      }
+      return segs;
+    }
+    function linePath(pts) { return 'M' + f(pts[0]) + monoSegs(pts).map((g) => 'C' + f(g[1]) + ' ' + f(g[2]) + ' ' + f(g[3])).join(''); }
+    function areaPath(top, bot) {
+      let p = linePath(top) + 'L' + f(bot[bot.length - 1]);
+      const sb = monoSegs(bot);
+      for (let i = sb.length - 1; i >= 0; i--) p += 'C' + f(sb[i][2]) + ' ' + f(sb[i][1]) + ' ' + f(sb[i][0]);
+      return p + 'Z';
+    }
+
+    function size() {
+      const W = chartEl.clientWidth;
+      return { W, H: W < 560 ? 270 : (W < 700 ? 340 : 440), m: { t: 30, r: 18, b: 34, l: 34 } };
+    }
+
+    function drawAcum() {
+      const { W, H, m } = size();
+      const years = DATA.map((d) => d.year).concat(FC.map((p) => p.year));
+      const x0 = years[0] - 0.3, x1 = years[years.length - 1] + 0.3;
+      const sx = (y) => m.l + ((y - x0) / (x1 - x0)) * (W - m.l - m.r);
+      const yMax = Math.ceil(Math.max(...FC.map((p) => p.hi)) / 5) * 5;
+      const sy = (v) => H - m.b - (v / yMax) * (H - m.t - m.b);
+      const id = 'c' + (++uid);
+      const svg = el('svg', { width: W, height: H, viewBox: `0 0 ${W} ${H}` });
+      const defs = el('defs', {}, svg);
+      ORDER.forEach((c) => {
+        const g = el('linearGradient', { id: `${id}-${c}`, x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+        el('stop', { offset: '0%', 'stop-color': CATS[c].color, 'stop-opacity': .5 }, g);
+        el('stop', { offset: '100%', 'stop-color': CATS[c].color, 'stop-opacity': .08 }, g);
+      });
+      const fg = el('linearGradient', { id: `${id}-fan`, x1: 0, y1: 0, x2: 1, y2: 0 }, defs);
+      el('stop', { offset: '0%', 'stop-color': '#38bdf8', 'stop-opacity': .35 }, fg);
+      el('stop', { offset: '100%', 'stop-color': '#38bdf8', 'stop-opacity': .08 }, fg);
+      const glow = el('filter', { id: `${id}-glow`, x: '-20%', y: '-50%', width: '140%', height: '200%' }, defs);
+      el('feGaussianBlur', { stdDeviation: 4, result: 'b' }, glow);
+      const merge = el('feMerge', {}, glow);
+      el('feMergeNode', { in: 'b' }, merge); el('feMergeNode', { in: 'SourceGraphic' }, merge);
+      const clip = el('clipPath', { id: `${id}-clip` }, defs);
+      const clipRect = el('rect', { x: 0, y: -20, width: W + 20, height: H + 40 }, clip);
+
+      const grid = el('g', { class: 'c-grid' }, svg);
+      const step = W < 560 ? 10 : 5;
+      for (let v = 0; v <= yMax; v += step) {
+        el('line', { x1: m.l, x2: W - m.r, y1: sy(v), y2: sy(v) }, grid);
+        el('text', { x: m.l - 10, y: sy(v) + 4, 'text-anchor': 'end', class: 'c-tick' }, grid).textContent = v;
+      }
+      years.forEach((y) => {
+        el('text', { x: sx(y), y: H - 10, 'text-anchor': 'middle', class: 'c-tick' + (y > LAST.year ? ' is-fc' : '') }, grid).textContent = W < 560 ? '’' + String(y).slice(2) : y;
+      });
+
+      const today = el('g', { class: 'c-today' }, svg);
+      el('line', { x1: sx(LAST.year), x2: sx(LAST.year), y1: m.t - 4, y2: H - m.b }, today);
+      el('rect', { x: sx(LAST.year) - 21, y: m.t - 26, width: 42, height: 20, rx: 10 }, today);
+      el('text', { x: sx(LAST.year), y: m.t - 12, 'text-anchor': 'middle' }, today).textContent = 'Hoy';
+
+      // Pronóstico
+      const fc = el('g', { class: 'c-fc' }, svg);
+      const fcPts = [{ year: LAST.year, v: LAST.total, lo: LAST.total, hi: LAST.total }].concat(FC);
+      const upper = fcPts.map((p) => f([sx(p.year), sy(p.hi)]));
+      const lower = fcPts.slice().reverse().map((p) => f([sx(p.year), sy(p.lo)]));
+      el('polygon', { points: upper.concat(lower).join(' '), fill: `url(#${id}-fan)` }, fc);
+      el('polyline', { points: fcPts.map((p) => f([sx(p.year), sy(p.v)])).join(' '), class: 'c-fcline' }, fc);
+      FC.forEach((p) => el('circle', { cx: sx(p.year), cy: sy(p.v), r: 4.5, class: 'c-fcdot' }, fc));
+      if (W >= 560) el('text', { x: sx(FC[FC.length - 1].year), y: sy(FC[FC.length - 1].hi) - 10, 'text-anchor': 'middle', class: 'c-fclabel' }, fc).textContent = 'IC 95 %';
+
+      // Áreas apiladas por categoría
+      const body = el('g', { 'clip-path': `url(#${id}-clip)` }, svg);
+      let below = DATA.map(() => 0);
+      ORDER.forEach((c) => {
+        const top = DATA.map((d, i) => below[i] + d.cum[c]);
+        const topPts = DATA.map((d, i) => [sx(d.year), sy(top[i])]);
+        const botPts = DATA.map((d, i) => [sx(d.year), sy(below[i])]);
+        el('path', { d: areaPath(topPts, botPts), fill: `url(#${id}-${c})` }, body);
+        if (c !== ORDER[ORDER.length - 1]) el('path', { d: linePath(topPts), class: 'c-edge', stroke: CATS[c].color, 'stroke-opacity': .85 }, body);
+        below = top;
+      });
+      const totPts = DATA.map((d) => [sx(d.year), sy(d.total)]);
+      el('path', { d: linePath(totPts), class: 'c-total', filter: `url(#${id}-glow)` }, body);
+      DATA.forEach((d) => el('circle', { cx: sx(d.year), cy: sy(d.total), r: 4.5, class: 'c-dot' }, body));
+
+      // Cruz de selección
+      const cross = el('g', { class: 'c-cross' }, svg);
+      const cl = el('line', { y1: m.t - 4, y2: H - m.b }, cross);
+      const halo = el('circle', { r: 13, class: 'halo' }, cross);
+      const core = el('circle', { r: 5.5, class: 'core' }, cross);
+
+      const overlay = el('rect', { x: m.l, y: m.t - 10, width: W - m.l - m.r, height: H - m.t - m.b + 10, fill: 'transparent' }, svg);
+      const yearAt = (px) => {
+        const y = Math.round(x0 + ((px - m.l) / (W - m.l - m.r)) * (x1 - x0));
+        return Math.min(years[years.length - 1], Math.max(years[0], y));
+      };
+      refs = {
+        svg, W, clipRect, fc, years, overlay, yearAt,
+        place(year) {
+          const p = DATA.find((d) => d.year === year) || FC.find((q) => q.year === year);
+          const x = sx(year), y = sy(p.forecast ? p.v : p.total);
+          cl.setAttribute('x1', x); cl.setAttribute('x2', x);
+          [halo, core].forEach((c) => { c.setAttribute('cx', x); c.setAttribute('cy', y); });
+          core.style.fill = p.forecast ? '#38bdf8' : '#fff';
+        }
+      };
+      return svg;
+    }
+
+    function drawAnual() {
+      const { W, H, m } = size();
+      const years = DATA.map((d) => d.year);
+      const band = (W - m.l - m.r) / years.length;
+      const cx = (i) => m.l + band * (i + 0.5);
+      const yMax = Math.max(6, Math.ceil(Math.max(...DATA.map((d) => d.n)) / 2) * 2);
+      const sy = (v) => H - m.b - (v / yMax) * (H - m.t - m.b);
+      const barW = Math.min(48, band * 0.52);
+      const svg = el('svg', { width: W, height: H, viewBox: `0 0 ${W} ${H}` });
+
+      const grid = el('g', { class: 'c-grid' }, svg);
+      for (let v = 0; v <= yMax; v += 2) {
+        el('line', { x1: m.l, x2: W - m.r, y1: sy(v), y2: sy(v) }, grid);
+        el('text', { x: m.l - 10, y: sy(v) + 4, 'text-anchor': 'end', class: 'c-tick' }, grid).textContent = v;
+      }
+      years.forEach((y, i) => {
+        el('text', { x: cx(i), y: H - 10, 'text-anchor': 'middle', class: 'c-tick' }, grid).textContent = W < 560 ? '’' + String(y).slice(2) : y;
+      });
+      const hl = el('rect', { y: m.t - 14, width: band - 8, height: H - m.t - m.b + 14, rx: 12, class: 'c-band' }, svg);
+
+      DATA.forEach((d, i) => {
+        const g = el('g', { class: 'c-stack' }, svg);
+        g.style.animationDelay = (i * 70) + 'ms';
+        let base = 0;
+        ORDER.forEach((c) => {
+          const k = d.count[c];
+          if (!k) return;
+          const y1 = sy(base + k), y0 = sy(base);
+          el('rect', { x: cx(i) - barW / 2, y: y1 + 1, width: barW, height: Math.max(2, y0 - y1 - 2), rx: 6, fill: CATS[c].color, 'fill-opacity': .9 }, g);
+          base += k;
+        });
+        el('text', { x: cx(i), y: sy(d.n) - 8, 'text-anchor': 'middle', class: 'c-barlabel' }, g).textContent = d.n;
+      });
+
+      const overlay = el('rect', { x: m.l, y: m.t - 14, width: W - m.l - m.r, height: H - m.t - m.b + 14, fill: 'transparent' }, svg);
+      refs = {
+        svg, W, years, overlay,
+        yearAt(px) { const i = Math.min(years.length - 1, Math.max(0, Math.floor((px - m.l) / band))); return years[i]; },
+        place(year) { const i = years.indexOf(year); hl.setAttribute('x', cx(i) - (band - 8) / 2); }
+      };
+      return svg;
+    }
+
+    function detailHTML(year) {
+      const fcp = FC.find((p) => p.year === year);
+      if (fcp) {
+        return `
+          <div class="dd-head"><span class="dd-year">${year}</span><span class="pill p-sky">Pronóstico</span></div>
+          <p class="dd-big">≈ ${Math.round(fcp.v)} <span>hitos acumulados</span></p>
+          <p class="dd-note">Intervalo de predicción del 95 %: entre ${Math.round(fcp.lo)} y ${Math.round(fcp.hi)} hitos.</p>
+          <p class="dd-sub">Cómo se calcula</p>
+          <p class="dd-note" style="margin-top:0">Regresión lineal por mínimos cuadrados ordinarios sobre la serie ${DATA[0].year} a ${LAST.year}, con una pendiente de ${b1.toFixed(1)} hitos por año.</p>
+          <a class="dd-cta" href="#contacto">El próximo hito puede ser tu proyecto <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a>`;
+      }
+      const d = DATA.find((x) => x.year === year);
+      const isAcum = mode === 'acum';
+      const vals = isAcum ? d.cum : d.count;
+      const maxV = Math.max(1, ...ORDER.map((c) => vals[c]));
+      const tag = year === THIS_YEAR ? '<span class="pill p-emerald">Año en curso</span>' : '<span class="pill p-violet">Observado</span>';
+      const big = isAcum
+        ? `${d.total} <span>hitos acumulados, ${d.n} en ${year}</span>`
+        : `${d.n} <span>${d.n === 1 ? 'hito' : 'hitos'} en el año</span>`;
+      return `
+        <div class="dd-head"><span class="dd-year">${year}</span>${tag}</div>
+        <p class="dd-big">${big}</p>
+        <div class="dd-break">
+          ${ORDER.map((c) => `<div class="dd-row"><span>${CATS[c].name}</span><span class="bar"><i style="width:${(vals[c] / maxV) * 100}%;background:${CATS[c].color}"></i></span><b>${vals[c]}</b></div>`).join('')}
+        </div>
+        <p class="dd-sub">Lo que pasó en ${year}</p>
+        <ul class="dd-list">${d.items.map(([c, t]) => `<li><i style="background:${CATS[c].color}"></i>${t}</li>`).join('')}</ul>`;
+    }
+
+    function select(year, force) {
+      if (!refs.place) return;
+      refs.place(year);
+      const cross = $('.c-cross', chartEl);
+      if (cross) cross.style.opacity = played ? 1 : 0;
+      const key = mode + year;
+      if (key === current && !force) return;
+      current = key;
+      detailInner.innerHTML = detailHTML(year);
+      detail.classList.remove('swap'); void detail.offsetWidth; detail.classList.add('swap');
+      detailInner.scrollTop = 0;
+      detail.classList.toggle('scrolly', detailInner.scrollHeight > detailInner.clientHeight + 4);
+    }
+
+    function intro(dur, done) {
+      const { clipRect, fc, W } = refs;
+      if (!clipRect) { if (done) done(); return; }
+      fc.style.opacity = 0;
+      const t0 = performance.now();
+      (function step(t) {
+        const k = Math.min(1, (t - t0) / dur);
+        const e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+        clipRect.setAttribute('width', ((W + 20) * e).toFixed(1));
+        if (k < 1) requestAnimationFrame(step);
+        else { fc.style.opacity = 1; if (done) done(); }
+      })(t0);
+    }
+
+    function render(animate) {
+      const W = chartEl.clientWidth;
+      if (!W) return;
+      lastW = W;
+      chartEl.classList.toggle('no-anim', !animate);
+      chartEl.classList.toggle('hold', !started);
+      const svg = mode === 'acum' ? drawAcum() : drawAnual();
+      chartEl.replaceChildren(svg);
+
+      const years = refs.years;
+      refs.overlay.addEventListener('pointermove', (e) => {
+        const r = svg.getBoundingClientRect();
+        select(refs.yearAt(e.clientX - r.left));
+      });
+      refs.overlay.addEventListener('pointerdown', (e) => {
+        const r = svg.getBoundingClientRect();
+        pinned = refs.yearAt(e.clientX - r.left);
+        select(pinned);
+      });
+      refs.overlay.addEventListener('pointerleave', () => select(pinned));
+      if (!years.includes(pinned)) pinned = LAST.year;
+
+      if (mode === 'acum') {
+        if (!started) { refs.clipRect.setAttribute('width', 0); refs.fc.style.opacity = 0; }
+        else if (animate && !reduce) intro(950, () => { played = true; select(pinned, true); });
+      }
+      select(pinned, true);
+    }
+
+    chartEl.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      e.preventDefault();
+      const ys = refs.years;
+      let i = ys.indexOf(pinned) + (e.key === 'ArrowRight' ? 1 : -1);
+      i = Math.max(0, Math.min(ys.length - 1, i));
+      pinned = ys[i];
+      select(pinned);
+    });
+
+    segBtns.forEach((btn) => btn.addEventListener('click', () => {
+      if (btn.dataset.mode === mode) return;
+      mode = btn.dataset.mode;
+      dash.classList.toggle('is-anual', mode === 'anual');
+      segBtns.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      render(true);
+    }));
+
+    render(false);
+
+    const dashObs = new IntersectionObserver((entries) => {
+      if (!entries.some((e) => e.isIntersecting)) return;
+      dashObs.disconnect();
+      started = true;
+      chartEl.classList.remove('hold');
+      const finish = () => { played = true; select(pinned, true); };
+      if (mode === 'acum') intro(1700, finish); else finish();
+    }, { threshold: 0.35 });
+    if (!started) dashObs.observe(chartEl);
+
+    if ('ResizeObserver' in window) {
+      let rt;
+      new ResizeObserver(() => {
+        clearTimeout(rt);
+        rt = setTimeout(() => { if (chartEl.clientWidth !== lastW) render(false); }, 120);
+      }).observe(chartEl);
+    }
+  })();
   </script>
-  <script data-goatcounter="https://juan.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+
+  <script data-goatcounter="https://juan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
-
